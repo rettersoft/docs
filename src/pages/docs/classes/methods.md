@@ -54,6 +54,8 @@ methods:
 
 In the example above, cronA is called every 30 minutes and cronB is called every week monday to friday at 6 PM.
 
+> For more details about crons please visit <https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html>
+
 ### READ
 
 Read methods should be called in instance scope.
