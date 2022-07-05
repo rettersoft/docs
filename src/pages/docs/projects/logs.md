@@ -4,6 +4,7 @@ description: Every call made to the classes in your project will show up in logs
 ---
 
 Every call made to the classes in your project will show up in logs.
+You can filter them by attributes below:
 
 - **requesttimeepoch :** Request time in milliseconds
 - **responsetimeepoch :** Response time in milliseconds
