@@ -33,18 +33,11 @@ const navigation = [
       { title: 'The Concept', href: '/docs/classes/the-concept' },
       { title: 'Templates', href: '/docs/classes/templates' },
       { title: 'Instances', href: '/docs/classes/instances' },
-      { title: 'State', href: '/docs/classes/state' },
       { title: 'Delegate Methods', href: '/docs/classes/delegate-methods' },
-    ],
-  },
-  {
-    title: 'Methods',
-    links: [
-      { title: 'The Concept', href: '/docs/methods/the-concept' },
-      { title: 'Method Types', href: '/docs/methods/method-types' },
-      { title: 'Input & Output', href: '/docs/methods/input-output' },
-      { title: 'Validation', href: '/docs/methods/validation' },
-      { title: 'Scheduling', href: '/docs/methods/validation' },
+      { title: 'Methods', href: '/docs/classes/methods' },
+      { title: 'Calling Methods', href: '/docs/classes/calling-methods' },
+      { title: 'Tasks & Scheduling', href: '/docs/classes/tasks-scheduling' },
+      { title: 'Method Data & Context', href: '/docs/classes/method-data-context' },
     ],
   },
   {
