@@ -15,7 +15,7 @@ interface WriteToDatabase {
     partKey: string
     sortKey: string
     memory?: boolean
-    data: Record<string, unknown>
+    data: Record<string, any>
 }
 interface ReadDatabase {
     partKey: string
@@ -77,3 +77,51 @@ await rdk.pipeline()
     .removeFromDatabase({ partKey: 'my-part', sortKey: 'my-sort' })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Write To Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+| sortKey       | string              | true                | Sort key of the record |
+| memory        | string              | false               | Flag to decide whether to put the data into memory or not |
+| data          | Record<string, any> | true                | Actual data of the record |
+
+### Read Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+| sortKey       | string              | true                | Sort key of the record |
+| memory        | string              | false               | Flag to decide whether to put the data into memory or not |
+
+### Remove From Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+| sortKey       | string              | true                | Sort key of the record |
+
+### Query Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+| beginsWith    | string              | false               | Comparison filter for sort key |
+| greaterOrEqual | string             | false               | Comparison filter for sort key |
+| lessOrEqual   | string              | false               | Comparison filter for sort key |
+| reverse       | boolean             | false               | Flag to decide whether to scan data backwards or not |
+| nextToken     | string              | false               | Pagination token |
+| limit         | number              | false               | Limits the number of records in the result |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

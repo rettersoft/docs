@@ -43,3 +43,23 @@ await rdk.pipeline()
     .generateCustomToken({ userId: 'user02', identity: 'enduser', claims: { name: 'Jane Doe' } })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Generate Custom Token Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| userId        | string              | true                | User's ID to put into the token |
+| identity      | string              | true                | User's identity (role) to put into the token |
+| claims        | Record<string, any> | false               | User's metadata to put into the token |
+
+### Generate Custom Token Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { customToken: string } | false           | Successful response |
+| error         | string              | false               | Reason of failure |

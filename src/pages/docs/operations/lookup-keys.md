@@ -57,3 +57,21 @@ await rdk.pipeline()
     .deleteLookupKey({ key: { name: 'msisdn', value: '905987654321' } })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Lookup Key Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| key           | { name: string, value: string } | true                | Lookup key's name and value |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

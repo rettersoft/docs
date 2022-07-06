@@ -40,3 +40,22 @@ await rdk.pipeline()
     .deployClass({ classId: 'Product', force: true })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Deploy Class Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| classId       | string              | false               | Class ID to deploy |
+| force         | boolean             | false               | Flag to decide whether to force the deployment or not |
+
+### Deploy Class Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

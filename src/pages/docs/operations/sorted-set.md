@@ -75,3 +75,49 @@ await rdk.pipeline()
     .removeFromSortedSet({ setName: 'my-set', sortKey: 'my-sort-key' })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Add To Sorted Set Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| setName       | string              | true                | Set's name |
+| sortKey       | string              | true                | Sort key |
+| data          | Record<string, any> | true                | Data |
+
+### Get From Sorted Set Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| setName       | string              | true                | Set's name |
+| sortKey       | string              | true                | Sort key |
+
+### Remove From Sorted Set Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| setName       | string              | true                | Set's name |
+| sortKey       | string              | true                | Sort key |
+
+### Query Sorted Set Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| setName       | string              | true                | Set's name |
+| beginsWith    | string              | false               | Comparison filter for sort key |
+| greaterOrEqual | string             | false               | Comparison filter for sort key |
+| lessOrEqual   | string              | false               | Comparison filter for sort key |
+| reverse       | boolean             | false               | Flag to decide whether to scan data backwards or not |
+| nextToken     | string              | false               | Pagination token |
+| limit         | number              | false               | Limits the number of records in the result |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

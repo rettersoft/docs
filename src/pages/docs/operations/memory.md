@@ -71,3 +71,43 @@ await rdk.pipeline()
     .deleteMemory({ key: 'my-key' })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Set Memory Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| key           | string              | true                | Key name |
+| value         | any                 | true                | Value |
+| expireAt      | number              | false               | Expiration time in seconds |
+
+### Increment Memory Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| key           | string              | true                | Key name |
+| path          | string              | false               | Path |
+| value         | any                 | true                | Value |
+
+### Get Memory Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| key           | string              | true                | Key name |
+
+### Delete Memory Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| key           | string              | true                | Key name |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

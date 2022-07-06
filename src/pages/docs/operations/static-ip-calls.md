@@ -53,3 +53,28 @@ await rdk.pipeline()
     .request({ url: 'https://api.ipify.org?format=json', method: 'POST' })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Static IP Request Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| url           | string              | true                | URL |
+| data          | { requestData?: any; returnData?: any; returnEndpoint?: StaticIPCallback } | true                | Request body |
+| method        | string              | false               | HTTP method |
+| headers       | Record<string, string> | false               | Request headers |
+| timeout       | number              | false               | Timeout |
+| sync          | boolean             | false               | Flag to decide whether to respond synchronously or not |
+| auth          | { username: string, password: string } | false               | Basic authentication parameters |
+| disableSSL    | boolean             | false               | Flag to decide whether to disable SSL verification |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |

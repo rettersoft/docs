@@ -55,3 +55,34 @@ await rdk.pipeline()
     .deleteFile({ filename: 'my-file' })
     .send()
 ```
+
+---
+
+## API Reference
+
+### Set File Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| filename      | string              | true                | File's name |
+| body          | string              | true                | File's content |
+
+### Get File Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| filename      | string              | true                | File's name |
+
+### Delete File Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| filename      | string              | true                | File's name |
+
+### Operation Output
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |
