@@ -7,6 +7,10 @@ You can use lookup keys to assign multiple references to instances.
 Most common use of a lookup key is to assign email and msisdn to a user's profile.
 Thus, you can reach the instance by calling it with email or msisdn.
 
+- You cannot get more than 100 keys in parallel.
+- You cannot set more than 25 keys in parallel.
+- You cannot delete more than 25 keys in parallel.
+
 ```typescript
 interface LookUpKey {
     key: {

@@ -5,6 +5,10 @@ description: Memory is a built-in in-memory cache that you can interact via RDK.
 
 Memory is a built-in in-memory cache that you can interact via RDK.
 
+- You cannot set more than 25 keys in parallel.
+- You cannot delete more than 25 keys in parallel.
+- You cannot get more than 100 keys in parallel.
+
 ```typescript
 interface GetMemory {
     key: string

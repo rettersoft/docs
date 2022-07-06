@@ -5,6 +5,10 @@ description: File Storage is an easy to use disk API that you can interact via R
 
 File Storage is an easy to use disk API that you can interact via RDK.
 
+- You cannot set more than 5 files in parallel.
+- You cannot get more than 10 files in parallel.
+- You cannot delete more than 5 files in parallel.
+
 ```typescript
 interface GetFile {
     filename: string

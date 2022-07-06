@@ -5,6 +5,11 @@ description: Sorted Set is an easy to use NoSQL database that you can put your r
 
 Sorted Set is an easy to use NoSQL database that you can put your records in order.
 
+- You cannot add more than 25 keys in parallel.
+- You cannot get more than 100 keys in parallel.
+- You cannot remove more than 25 keys in parallel.
+- You cannot run more than 10 queries in parallel.
+
 ```typescript
 interface GetFromSortedSet {
     setName: string

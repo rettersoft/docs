@@ -5,6 +5,8 @@ description: You can make API calls to outside of Rio from a static IP address.
 
 You can make API calls to outside of Rio from a static IP address.
 
+> You cannot make more than 3 requests in parallel.
+
 ```typescript
 interface StaticIPRequest {
     url: string
@@ -45,4 +47,9 @@ import RDK from '@retter/rdk'
 const rdk = new RDK()
 
 await rdk.request({ url: 'https://api.ipify.org?format=json', method: 'GET' })
+
+await rdk.pipeline()
+    .request({ url: 'https://api.ipify.org?format=json', method: 'GET' })
+    .request({ url: 'https://api.ipify.org?format=json', method: 'POST' })
+    .send()
 ```

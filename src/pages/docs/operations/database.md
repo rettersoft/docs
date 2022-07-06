@@ -5,6 +5,11 @@ description: Database is a built-in NoSQL data storage with in-memory accelerati
 
 Database is a built-in NoSQL data storage with in-memory acceleration layer that you can interact via RDK.
 
+- You cannot write more than 25 records in parallel.
+- You cannot get more than 100 records in parallel.
+- You cannot remove more than 25 records in parallel.
+- You cannot run more than 10 queries in parallel.
+
 ```typescript
 interface WriteToDatabase {
     partKey: string
