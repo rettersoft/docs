@@ -12,7 +12,7 @@ Contains information about the request method has received. Has the following fo
 ### Request Model
 
 ```typescript
-export interface Request<T = any> {
+interface Request<T = any> {
     httpMethod: string
     body?: T
     headers: { [key: string]: string }
@@ -35,7 +35,7 @@ Using the response, anyting can be returned in the body.
 ### Response Model
 
 ```typescript
-export interface Response<T = any> {
+interface Response<T = any> {
     statusCode: number
     body?: T
     headers?: { [key: string]: string },
@@ -61,7 +61,7 @@ Context has the metadata values of data.
 ### Context Model
 
 ```typescript
-export interface Context {
+interface Context {
     requestId: string
     projectId: string
     action: string
@@ -101,7 +101,7 @@ State represents the state of that instance. Contrary to public, private object 
 ### State Model
 
 ```typescript
-export interface State {
+interface State {
     public?: { [key: string]: any }
     private?: { [key: string]: any }
     user?: { [userId: string]: { [key: string]: any } }
