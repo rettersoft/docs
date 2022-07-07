@@ -63,7 +63,7 @@ They get the current value of the state but they cannot write anything.
 
 ### WRITE
 
-Unlike read methods, write methods are able write to states.
+Unlike read methods, write methods are able to write to states.
 Concurrent write to an instance's state is always **1**.
 To accomplish that, WRITE methods use locks to manage concurrency.
 
@@ -73,7 +73,7 @@ If you don't use one of our SDKs, it's your responsibility to handle retry proce
 
 ### QUEUED_WRITE
 
-Queued write methods are also able write to states.
+Queued write methods are also able to write to states.
 They are based on a FIFO queue, so concurrency management handled automatically.
 
 If there is a new WRITE method while a queued write method is still on progress, Rio opens a few seconds gap right after queued write method completed.
