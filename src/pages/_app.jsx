@@ -23,6 +23,7 @@ const navigation = [
       { title: 'Dependencies', href: '/docs/projects/dependencies' },
       { title: 'Models', href: '/docs/projects/models' },
       { title: 'Members', href: '/docs/projects/members' },
+      { title: 'Scan Jobs', href: '/docs/projects/scan-jobs' },
       { title: 'Logs', href: '/docs/projects/logs' },
       { title: 'Settings', href: '/docs/projects/settings' },
     ],
