@@ -1,5 +1,5 @@
 ---
-title: Static IP Calls Storage
+title: Static IP Calls
 description: You can make API calls to outside of Rio from a static IP address.
 ---
 
