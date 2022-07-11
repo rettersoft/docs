@@ -31,4 +31,4 @@ A free subscription daily limits are:
 
 ## Hard Limits
 
-- **Single Schedule API Call :** Number of methods to trigger in a single *tasks* call. It cannot be more than 250.
+- **Tasks:** Number of methods to trigger in a single *tasks* call. It cannot be more than 250.

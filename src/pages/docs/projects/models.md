@@ -7,6 +7,8 @@ Models are backbone of Rio's validation mechanism.
 You can assign models to methods in order to validate before your method call.
 Thus, your code will be more readable and less error prone. We strictly suggests schemas written with JSON Schema (Draft-07).
 
+> Rio doesn't support references in models for now.
+
 ```json
 models/Person.json
 
