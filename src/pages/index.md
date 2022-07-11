@@ -30,11 +30,11 @@ Now, we can use Rio to deliver cloud software up to 10x faster than directly usi
 {% link-grid-link title="Classes" icon="presets" href="/docs/classes/the-concept"
     description="Classes are basic building blocks in Rio." /%}
 
-{% link-grid-link title="Methods" icon="theming" href="/docs/methods/the-concept"
-    description="Methods are places that you put your business logic and implementations." /%}
+{% link-grid-link title="SDKs" icon="theming" href="/docs/sdks"
+    description="Rio has SDKs for iOS, Android and Web platforms." /%}
 
-{% link-grid-link title="Operations" icon="plugins" href="/docs/operations/the-concept"
-    description="Operations are built-in services available via our API called RDK." /%}
+{% link-grid-link title="CLI" icon="plugins" href="/docs/cli"
+    description="Rio CLI is a nodejs program to help you create projects and deploy them." /%}
 
 {% /link-grid %}
 

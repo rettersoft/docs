@@ -8,9 +8,3 @@ Each project lives in its own sandbox and cannot access other projects' resource
 
 Each project is given an unique projectId upon creation.
 This cannot be changed later.
-
----
-
-## Subtitle A
-
-...
