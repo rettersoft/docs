@@ -25,7 +25,7 @@ methods:
 | Parameter     | Type                | Required            | Description         |
 | ------------- | ------------------- | ------------------- | ------------------- |
 | architecture  | string (arm64, x86_64) | false            | Architecture for methods. Default value is arm64 which is faster. |
-| accelerated   | boolean             | false               | Flag to decide whether cache instances or not |
+| accelerated   | boolean             | false               | Flag to decide whether to cache instances or not |
 | authorizer    | string              | false               | Delegate method for authorization. (*filename.methodName*) |
 | destroy       | string              | false               | Delegate method for approving instance deletion. (*filename.methodName*) |
 | init          | string              | false               | Delegate method for constructor. (*filename.methodName*) |
@@ -36,6 +36,16 @@ methods:
 | destinations  | string[]            | false               | Custom destinations to use on state changes |
 | methods       | Method[]            | false               | Method definitions |
 | description   | string              | false               | Description to put into the auto-generated documentation. |
+| tracing       | Tracing             | false               | Enable tracing for method calls |
+
+## Tracing Model
+
+Most of Rio's delegate methods accept Handler model as well as they accept source code strings.
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| type          | string (XRAY)       | true                | Tracing service. |
+| mode          | string (Active, PassThrough) | false      | Tracing mode. Default value is Active |
 
 ## Handler Model
 
