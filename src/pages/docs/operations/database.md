@@ -89,6 +89,7 @@ await rdk.pipeline()
 | partKey       | string              | true                | Partition key of the record |
 | sortKey       | string              | true                | Sort key of the record |
 | memory        | string              | false               | Flag to decide whether to put the data into memory or not |
+| expireAt      | number              | false               | Time to live in seconds |
 | data          | Record<string, any> | true                | Actual data of the record |
 
 ### Read Database Input
