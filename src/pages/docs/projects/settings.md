@@ -49,3 +49,11 @@ To configure your retry behavior, you should provide delay and max count.
     _private: {}, // private state
 }
 ```
+
+### Concurrency
+
+By default, destinations have instanceId based concurrency which means each instanceId has its own queue to push messages in order.
+These messages will be delivered in parallel by number of active instanceIds.
+
+If you want to manage concurrency you should provide a parallelization factor in your destination configuration.
+When you set an integer greater than zero, core will limit concurrent threads to that value instead of number of active instanceIds.
