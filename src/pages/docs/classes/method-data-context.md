@@ -30,7 +30,7 @@ if(data.request.httpMethod==='POST'){
 
 ## Response
 
-Using the response, anyting can be returned in the body.
+Using the response, anything can be returned in the body.
 
 ### Response Model
 

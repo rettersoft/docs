@@ -1,9 +1,9 @@
 ---
 title: Tasks & Scheduling
-description: Methods can be called from all of our SDKs, tasks, schedules and RDK.
+description: Tasks is for triggering methods after specified amount of seconds.
 ---
 
-Methods can be called from all of our SDKs, tasks, schedules and RDK.
+Tasks is for triggering methods after specified amount of seconds.
 
 ---
 

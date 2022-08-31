@@ -9,12 +9,9 @@ import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
 const codeLanguage = 'javascript'
-const code = `export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
-  },
+const code = `export async function myFunc(data: Data): Promise<Data> {
+  data.response = { statusCode: 204 }
+  return data;
 }`
 
 const tabs = [

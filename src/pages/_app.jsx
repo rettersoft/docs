@@ -38,6 +38,7 @@ const navigation = [
       { title: 'Methods', href: '/docs/classes/methods' },
       { title: 'Calling Methods', href: '/docs/classes/calling-methods' },
       { title: 'Tasks & Scheduling', href: '/docs/classes/tasks-scheduling' },
+      { title: 'Events', href: '/docs/classes/events' },
       { title: 'Method Data & Context', href: '/docs/classes/method-data-context' },
     ],
   },
