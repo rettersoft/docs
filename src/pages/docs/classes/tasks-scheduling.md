@@ -55,4 +55,4 @@ data.tasks = [
 
 Besides tasks support, Rio also supports crons.
 
-> For more details please visit <https://docs-retter.vercel.app/docs/classes/methods#static>
+> For more details please visit <https://docs.retter.io/docs/classes/methods#static>
