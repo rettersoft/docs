@@ -97,7 +97,7 @@ If we list todo items now, we can see isCompleted field as true.
 
 We can also take realtime updates from cloud objects.
 Because of updating public state (in previous article), we can subscribe the public state.
-When a new item created or existing one updated, we will be notified.
+When a new item created or existing one is updated, we will be notified.
 
 ```typescript
 todoObject.state.public.subscribe(state => {

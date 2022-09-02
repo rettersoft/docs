@@ -5,21 +5,19 @@ description: Enabling developers to write backend apps with Retter.io
 ---
 
 Retter.io *(Rio)* is an abstraction on top of cloud infrastructure.
-Basically instead of writing apps directly running on AWS, you write apps running on Rio.
-Rio runs on AWS.
+Basically instead of writing apps directly running on AWS, you write apps running on Rio which runs on AWS. 
 
-We like to call Rio a cloud operating system managing the resources of cloud computer (AWS).
-Nobody writes apps directly accessing Intel chip.
-There is always an operating system in between like Windows, MacOS or Linux.
+We like to call Rio as cloud operating system that manages the resources of cloud computer (AWS).
+Instead of writing an application that directly accesses the intel chip, it is preferable to have an operating system such as Windows, Macoss or Linux.
 Writing an application on top of Windows is much faster and easier compared to directly using the underlying hardware.
-Also there are many high level components you can use like UI components etc.
-With Rio we aim to give developers the ease of use of an operating system.
+Additionally, there are many high level components you might use such as UI components. 
+The ease of use of an operating system is aimed to give to developers with the Rio.
 
-There are some apps like realtime gaming, you cannot use Rio.
+There are some apps such as realtime gaming that you cannot use Rio.
 These may require very low level networking components etc.
-However if you like to write an Internet scale cloud app for retail for instance, Rio gives you speed and ease of use.
+For instance, if you like to write an Internet scale cloud app for retail, Rio gives you speed and ease of use.
 
-We have created Rio for our internal use in Retter while writing custom software for our clients.
+We created Rio for our internal use in Retter while writing custom software for our clients.
 Now, we can use Rio to deliver cloud software up to 10x faster than directly using AWS.
 
 {% link-grid %}
