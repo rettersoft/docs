@@ -13,6 +13,7 @@ const navigation = [
       { title: 'Getting started', href: '/' },
       { title: 'CLI', href: '/docs/cli' },
       { title: 'SDKs', href: '/docs/sdks' },
+      { title: 'Change Logs', href: '/docs/change-logs' },
     ],
   },
   {
