@@ -5,7 +5,7 @@ description: A summary explanation about content of each version
 
 ## v1.2.1
 
-This version was released on September 6, 2022.
+This version was released on September 7, 2022.
 
 - Destination handlers' timeouts decreased to 5 seconds.
 - Tasks started to accept retryConfig.
