@@ -57,6 +57,12 @@ destinations:
     - id: yourDestinationId
 ```
 
+### Destinations in Templates
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| id            | string              | true                | Destination's unique ID |
+
 ### Concurrency
 
 By default, destinations have instanceId based concurrency which means each instanceId has its own queue to push messages in order.
