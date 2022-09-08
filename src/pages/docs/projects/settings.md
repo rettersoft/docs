@@ -50,14 +50,14 @@ To configure your retry behavior, you should provide delay and max count.
 }
 ```
 
+### Destinations in Templates
+
 To use any of these destinations, you should add them into your class templates.
 
 ```yaml
 destinations:
     - id: yourDestinationId
 ```
-
-### Destinations in Templates
 
 | Parameter     | Type                | Required            | Description         |
 | ------------- | ------------------- | ------------------- | ------------------- |
