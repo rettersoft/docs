@@ -54,7 +54,7 @@ To use any of these destinations, you should add them into your class templates.
 
 ```yaml
 destinations:
-    id: yourDestinationId
+    - id: yourDestinationId
 ```
 
 ### Concurrency
