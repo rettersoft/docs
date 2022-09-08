@@ -3,6 +3,12 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.2
+
+This version was released on September 8, 2022.
+
+- BUG FIX: Pushing empty states from static method calls to destinations fixed.
+
 ## v1.2.1
 
 This version was released on September 7, 2022.
