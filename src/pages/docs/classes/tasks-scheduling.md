@@ -1,9 +1,9 @@
 ---
 title: Tasks & Scheduling
-description: Tasks is for triggering methods after specified amount of seconds.
+description: Tasks are for triggering methods after specified amount of seconds.
 ---
 
-Tasks is for triggering methods after specified amount of seconds.
+Tasks are for triggering methods after specified amount of seconds.
 
 ---
 
