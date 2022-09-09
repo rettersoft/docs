@@ -7,7 +7,7 @@ description: A summary explanation about content of each version
 
 This version was released on September 8, 2022.
 
-- BUG FIX: Pushing empty states from static method calls to destinations fixed.
+- **BUG FIX:** Pushing empty states from static method calls to destinations fixed.
 
 ## v1.2.1
 
