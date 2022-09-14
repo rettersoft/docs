@@ -1,6 +1,6 @@
 ---
 title: Dependencies
-description: Projects are simply applications running on your Rio operating system.
+description: Dependencies provide a way to extend your default dependencies with your own custom codes.
 ---
 
 Beside frameworks' dependencies (*npm*, *pypi*), there are also dependencies that are not part of the framework itself.

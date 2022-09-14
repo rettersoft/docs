@@ -1,9 +1,9 @@
 ---
 title: Tasks & Scheduling
-description: Tasks is for triggering methods after specified amount of seconds.
+description: Tasks are for triggering methods after specified amount of seconds.
 ---
 
-Tasks is for triggering methods after specified amount of seconds.
+Tasks are for triggering methods after specified amount of seconds.
 
 ---
 
@@ -13,10 +13,10 @@ Sometimes you may want to make another method request but don't need back an imm
 Let's say you have created an order and you would like to send it to Reporting class.
 You can trigger a method call by setting data.tasks property.
 
-data.tasks property is an array of Schedule items which looks like this:
+data.tasks property is an array of Task items which looks like this:
 
 ```typescript
-export interface Schedule {
+export interface Task {
     classId?: string;
     instanceId?: string;
     payload?: any;
@@ -25,7 +25,7 @@ export interface Schedule {
 }
 ```
 
-Below example schedules two different calls, one for the same instance another one to another class instance.
+Below example triggers two different methods, one for the same instance another one to another class' instance.
 
 ```typescript
 data.tasks = [
@@ -47,7 +47,7 @@ data.tasks = [
 - **method :** Name of the method to call.
 - **classId (optional) :** Name of class. If not given, same classId will be used making this request.
 - **instanceId (optional) :** Instance id for a class. If not given request will be sent to the same instance making this request.
-- **payload (optional) :** A payload to send to scheduled method. It will be delivered in data.request.body field.
+- **payload (optional) :** A payload to send to triggered method. It will be delivered in data.request.body field.
 
 ---
 
