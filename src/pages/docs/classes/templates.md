@@ -38,15 +38,6 @@ methods:
 | description   | string              | false               | Description to put into the auto-generated documentation. |
 | tracing       | Tracing             | false               | Enable tracing for method calls |
 
-## Tracing Model
-
-Most of Rio's delegate methods accept Handler model as well as they accept source code strings.
-
-| Parameter     | Type                | Required            | Description         |
-| ------------- | ------------------- | ------------------- | ------------------- |
-| type          | string (XRAY)       | true                | Tracing service. |
-| mode          | string (Active, PassThrough) | false      | Tracing mode. Default value is Active |
-
 ## Handler Model
 
 Most of Rio's delegate methods accept Handler model as well as they accept source code strings.

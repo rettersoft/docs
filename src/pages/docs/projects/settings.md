@@ -26,3 +26,12 @@ For example, in nodejs, you can access them via *process.env*
 In Rio, you can access request and response logs through developer console in most cases, projects might require more sophisticated query options.
 Rio has graylog support as a log adapter to send all logs to your graylog server.
 All you have to do is that you add a log adapter by providing **endpoint**, **username** and **password**.
+
+## Tracing Adapters
+
+In Rio, you can enable tracing mode for your project.
+In tracing mode, all of your API calls will be pushed to XRAY for detailed analysis.
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| type          | string (XRAY)       | true                | Tracing service.    |
