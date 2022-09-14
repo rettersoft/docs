@@ -25,7 +25,7 @@ To configure your retry behavior, you should provide delay and max count.
 }
 ```
 
-### Destinations in Templates
+## Destinations in Templates
 
 To use any of these destinations, you should add them into your class templates.
 
@@ -38,7 +38,7 @@ destinations:
 | ------------- | ------------------- | ------------------- | ------------------- |
 | id            | string              | true                | Destination's unique ID |
 
-### Concurrency
+## Concurrency
 
 By default, destinations have instanceId based concurrency which means each instanceId has its own queue to push messages in order.
 These messages will be delivered in parallel by number of active instanceIds.
