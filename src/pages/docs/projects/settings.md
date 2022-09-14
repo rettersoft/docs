@@ -26,6 +26,3 @@ For example, in nodejs, you can access them via *process.env*
 In Rio, you can access request and response logs through developer console in most cases, projects might require more sophisticated query options.
 Rio has graylog support as a log adapter to send all logs to your graylog server.
 All you have to do is that you add a log adapter by providing **endpoint**, **username** and **password**.
-
-
-
