@@ -26,6 +26,7 @@ const navigation = [
       { title: 'Scan Jobs', href: '/docs/projects/scan-jobs' },
       { title: 'Logs', href: '/docs/projects/logs' },
       { title: 'Settings', href: '/docs/projects/settings' },
+      { title: 'Destinations', href: '/docs/projects/destinations' },
     ],
   },
   {
