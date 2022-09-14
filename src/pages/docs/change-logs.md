@@ -3,6 +3,20 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.3
+
+This version was released on September 15, 2022.
+
+- Obsolete layer versions will be removed during deployments.
+- Delete instance operation added.
+- If requests and/or responses are larger then 10 KB, they replaced with a simple warning text to prevent logging and 3rd party integration failures.
+- Garbage collector improved.
+- REST support added for API Gateway. It can be selected via an environment variable.
+- Filters support added to destinations.
+- Some special characters (!,#,%) are not allowed in instance id anymore.
+
+> Some features require RDK v1.3.7 to be able to work properly.
+
 ## v1.2.2
 
 This version was released on September 8, 2022.
