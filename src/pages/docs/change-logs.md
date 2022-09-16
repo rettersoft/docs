@@ -32,7 +32,6 @@ This version was released on September 7, 2022.
 - Scan jobs shows up the reason if they fail.
 - Throws a specific error with detailed explanation (CouldNotParseData) if response data's model is invalid.
 - Default tags (projectid, classid) added to instance objects.
-- iam:CreateServiceLinkedRole permission excluded.
 - Remove protection added for classes.
 - Event subscription filters are not required anymore.
 - Task manager pushes QUEUED_WRITE methods into their queues after provided amount of seconds instead of pushing them immediately.
