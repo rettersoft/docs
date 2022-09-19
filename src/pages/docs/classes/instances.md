@@ -10,7 +10,7 @@ Except for static methods, everything else in a Rio class is instance-based.
 ## State
 
 State is a basic storage unit for your instance. Every instance has a state.
-Best practice is to keep the size of this state relatively small.
+Best practice is to keep the size of the state relatively small.
 
 You can store JSON serializable data in your state by 4 different access level: public, user, role, private.
 
@@ -21,7 +21,7 @@ You can store JSON serializable data in your state by 4 different access level: 
 
 > A state of a single instance cannot be larger than 5 MB.
 > If your class works in accelerated mode, the limit is 100 KB.
-> There is also a storage limit for total size of your states. By the default, you have 100 MB storage to keep your states.
+> There is also a storage limit for total size of your states. By default, you have 100 MB storage to keep your states.
 
 ### What Do You Do With State?
 

@@ -47,7 +47,6 @@ dependencies:
   - mylib
 methods:
   - method: login
-    invocationType: IMMEDIATE
     handler: index.login
 ```
 
@@ -99,6 +98,5 @@ dependencies:
   - otherLocalLib
 methods:
   - method: deliver
-    invocationType: IMMEDIATE
     handler: operations.deliver
 ```

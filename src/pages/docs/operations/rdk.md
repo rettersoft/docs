@@ -24,9 +24,3 @@ await rdk.pipeline()
     .addToSortedSet({ setName: 'my-set', sortKey: 'my-sort-key', data: { key: 'value' } })
     .send()
 ```
-
----
-
-## API Reference
-
-RDK constructor doesn't have any parameters.

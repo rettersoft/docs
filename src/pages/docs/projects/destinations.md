@@ -38,10 +38,37 @@ destinations:
 | ------------- | ------------------- | ------------------- | ------------------- |
 | id            | string              | true                | Destination's unique ID |
 
-## Concurrency
+## API Reference
+
+| Parameter         | Type                                    | Required            | Description         |
+| ----------------- | --------------------------------------- | ------------------- | ------------------- |
+| id                | string                                  | true                | Destination's unique ID |
+| type              | string (Elasticsearch, Firestore, Http) | true                | Destination's type |
+| pfactor           | number                                  | false               | Parallelization factor. If you set this, queue will be consumed by the number you provided in parallel |
+| retryConfig.delay | number                                  | false               | delay multiplexer after a failed execution |
+| retryConfig.count | number                                  | false               | maximum retry count after a failed execution |
+
+### Concurrency
 
 By default, destinations have instanceId based concurrency which means each instanceId has its own queue to push messages in order.
 These messages will be delivered in parallel by number of active instanceIds.
 
 If you want to manage concurrency you should provide a parallelization factor in your destination configuration.
 When you set an integer greater than zero, core will limit concurrent threads to that value instead of number of active instanceIds.
+
+### Elasticsearch Support
+
+| Parameter         | Type                                    | Required            | Description         |
+| ----------------- | --------------------------------------- | ------------------- | ------------------- |
+| cloudId           | string                                  | true                | Elasti.co's cloud id |
+| username          | string                                  | true                | Elasti.co's username |
+| password          | string                                  | true                | Elasti.co's password |
+| index             | string                                  | true                | Index name to push the data into |
+
+### Http Support
+
+| Parameter             | Type                                    | Required            | Description         |
+| --------------------- | --------------------------------------- | ------------------- | ------------------- |
+| method                | string                                  | true                | Http method |
+| url                   | string                                  | true                | Request url |
+| headers.<header_name> | string                                  | false               | Request header's name and value |

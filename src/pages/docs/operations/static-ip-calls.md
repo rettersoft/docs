@@ -35,6 +35,10 @@ interface OperationResponse {
 async function request(input: StaticIPRequest): Promise<OperationResponse | undefined> {
     // ...
 }
+
+async function httpRequest(input: StaticIPRequest): Promise<OperationResponse | undefined> {
+    // ...
+}
 ```
 
 ---
@@ -47,10 +51,13 @@ import RDK from '@retter/rdk'
 const rdk = new RDK()
 
 await rdk.request({ url: 'https://api.ipify.org?format=json', method: 'GET' })
+await rdk.httpRequest({ url: 'https://api.ipify.org?format=json', method: 'GET' })
 
 await rdk.pipeline()
     .request({ url: 'https://api.ipify.org?format=json', method: 'GET' })
     .request({ url: 'https://api.ipify.org?format=json', method: 'POST' })
+    .httpRequest({ url: 'https://api.ipify.org?format=json', method: 'GET' })
+    .httpRequest({ url: 'https://api.ipify.org?format=json', method: 'POST' })
     .send()
 ```
 

@@ -35,6 +35,8 @@ models/Person.json
 
 You will be provided client-side models written in Kotlin, Swift and Typescript when you use models in your project.
 
+> Rio doesn't support any kind of reference usages in JSON schema models.
+
 ## Required Variables in Models
 
 While defining models, we specify the type of each variable and if a variable needs to be initialized.
@@ -104,7 +106,6 @@ methods:
     outputModel: ProfileModel
     errorModel: ErrorModel
     type: WRITE
-    invocationType: IMMEDIATE
     handler: index.update
 
   - method: getStoreInfo
@@ -112,7 +113,6 @@ methods:
     outputModel: ProfileModel
     errorModel: ErrorModel
     type: READ
-    invocationType: IMMEDIATE
     handler: index.profile
 ```
 
@@ -126,7 +126,6 @@ Add the models to your methods in template.yml file.
 ...rest
 methods:
     - method: createTodo
-      invocationType: IMMEDIATE
       inputModel: CreateTodoInput     # CreateTodoInput model added
       outputModel: CreateTodoOutput   # CreateTodoOutput model added
       handler: index.createTodo

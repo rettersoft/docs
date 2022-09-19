@@ -43,12 +43,12 @@ You should push your events into `data.events` array in the following model.
 | EX            | boolean             | false               | Checks if the target value is not undefined
 | EQ            | any                 | false               | Checks if the target value equals to given value
 | NE            | any                 | false               | Checks if the target value does not equal to given value
-| GT            | string | number     | false               | Checks if the target value is greater than given value
-| GTE           | string | number     | false               | Checks if the target value is greater than or equal to given value
-| LT            | string | number     | false               | Checks if the target value is less than given value
-| LTE           | string | number     | false               | Checks if the target value is less than or equal to given value
-| IN            | string | array      | false               | Cross checks if values match according to the type of the values
-| NIN           | string | array      | false               | Cross checks if values don't match according to the type of the values
+| GT            | string / number     | false               | Checks if the target value is greater than given value
+| GTE           | string / number     | false               | Checks if the target value is greater than or equal to given value
+| LT            | string / number     | false               | Checks if the target value is less than given value
+| LTE           | string / number     | false               | Checks if the target value is less than or equal to given value
+| IN            | string / array      | false               | Cross checks if values match according to the type of the values
+| NIN           | string / array      | false               | Cross checks if values don't match according to the type of the values
 
 > IN and NIN have different working perspectives according to their types.
 

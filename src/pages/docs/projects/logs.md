@@ -20,6 +20,24 @@ You can filter them by attributes below:
 - **classid :** Class Id
 - **instanceid :** Instance Id
 - **methodname :** Method that called by the requester
+- **durationinmilliseconds :** Duration of your code's execution
+- **executiondurationinmilliseconds :** Duration of whole request's execution
+- **clientbrowsername :** Name of the browser of the requester
+- **clientbrowserversion :** Version of the browser of the requester
+- **clientcpuarchitecture :** CPU architecture name of the requester
+- **clientdevicemodel :** Device model of the requester
+- **clientdevicemodel :** Device type of the requester
+- **clientdevicevendor :** Device vendor of the requester
+- **clientenginename :** Engine name of the browser of the requester
+- **clientengineversion :** Engine version of the browser of the requester
+- **clientosname :** Name of the operating system of the requester
+- **clientosversion :** Version of the operating system of the requester
+- **clientuseragent :** User agent
+- **sourceip :** IP address of the requester
+- **reqsize :** Total size of the request in bytes
+- **req :** Request
+- **res :** Response
+
 - **year :** Year
 - **month :** Month
 - **day :** Day

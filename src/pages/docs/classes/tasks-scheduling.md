@@ -43,7 +43,7 @@ data.tasks = [
 ]
 ```
 
-- **after :** Defined in seconds. You can define a delay for methods with invocationType:IMMEDIATE. This means execute this method after this delay, but immediately execute it. They won't be queued. We currently support delays up to 12 hours.
+- **after :** Defined in seconds. You can define a delay for all kinds of methods. This means execute the method after the provided amount of seconds delay. We currently support delays up to 12 hours.
 - **method :** Name of the method to call.
 - **classId (optional) :** Name of class. If not given, same classId will be used making this request.
 - **instanceId (optional) :** Instance id for a class. If not given request will be sent to the same instance making this request.

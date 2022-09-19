@@ -124,7 +124,6 @@ methods:
   - method: sayHello
     inputModel: SayHelloInput
     tag: test
-    invocationType: IMMEDIATE
     handler: index.sayHello
 ```
 
@@ -139,7 +138,6 @@ methods:
   - method: sayHello
     queryStringInputModel: SayHelloInput
     tag: test
-    invocationType: IMMEDIATE
     handler: index.sayHello
 ```
 

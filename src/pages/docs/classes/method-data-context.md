@@ -17,6 +17,7 @@ interface Request<T = any> {
     body?: T
     headers: { [key: string]: string }
     queryStringParams: { [key: string]: string }
+    requestTime: string // in iso date time format
 }
 ```
 

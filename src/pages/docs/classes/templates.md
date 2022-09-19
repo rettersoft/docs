@@ -36,7 +36,6 @@ methods:
 | destinations  | string[]            | false               | Custom destinations to use on state changes |
 | methods       | Method[]            | false               | Method definitions |
 | description   | string              | false               | Description to put into the auto-generated documentation. |
-| tracing       | Tracing             | false               | Enable tracing for method calls |
 
 ## Handler Model
 
