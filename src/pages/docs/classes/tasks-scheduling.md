@@ -49,6 +49,8 @@ data.tasks = [
 - **instanceId (optional) :** Instance id for a class. If not given request will be sent to the same instance making this request.
 - **payload (optional) :** A payload to send to triggered method. It will be delivered in data.request.body field.
 
+> You cannot trigger more than 250 tasks in a single call and each payload cannot be larger than 250KB.
+
 ---
 
 ## Scheduling

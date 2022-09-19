@@ -28,7 +28,3 @@ A free subscription daily limits are:
 - **Memory Storage :** Size of total global memory usage. It's 1,000 KB by default.
 - **Lookup Key Storage :** Size of data stored in lookup key storage. It's 1,000 KB by default.
 - **SortedSet Storage :** Size of data stored in sorted sets. It's 5,000 KB by default.
-
-## Hard Limits
-
-- **Tasks:** Number of methods to trigger in a single *tasks* call. It cannot be more than 250.
