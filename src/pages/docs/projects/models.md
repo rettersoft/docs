@@ -116,7 +116,10 @@ methods:
     handler: index.profile
 ```
 
+### Advanced Query String Model
+
 Models for query string variables work a little different from other kind of models. This is important for two main reasons.
+
 First of all, just like any other web framework or web application, their internal format must be `Record<string, string>`.
 As a workaround, RIO looks for two special query string keys: data and __isbase64.
 If you provide them RIO directly assumes that there is some information in base64 format in data key.
