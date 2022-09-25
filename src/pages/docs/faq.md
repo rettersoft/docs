@@ -3,7 +3,7 @@ title: FAQ
 description: Frequently Asked Questions
 ---
 
-You can find answers to frequently asked questions on this page.
+You can find answers to frequently asked questions here.
 
 ---
 

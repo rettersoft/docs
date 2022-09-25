@@ -12,8 +12,8 @@ const navigation = [
     links: [
       { title: 'Getting started', href: '/' },
       { title: 'CLI', href: '/docs/cli' },
-      { title: 'FAQ', href: '/docs/faq' },
       { title: 'SDKs', href: '/docs/sdks' },
+      { title: 'FAQ', href: '/docs/faq' },
       { title: 'Change Logs', href: '/docs/change-logs' },
     ],
   },
