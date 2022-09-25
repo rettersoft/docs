@@ -6,7 +6,7 @@ description: By publishing and subscribing events, you can implement an event dr
 By publishing events and subscribing to them from your class methods, you can implement an event driven architecture.
 
 ```typescript
-data.events.push({ name: 'CUSTOM_EVENT', payload: { a: 1, b: 2 } })
+data.events.push({ name: 'CUSTOM_EVENT', payload: { ...someOtherData, instanceId: 'default' } })
 ```
 
 ```yaml
