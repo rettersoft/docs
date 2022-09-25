@@ -116,6 +116,32 @@ methods:
     handler: index.profile
 ```
 
+Models for query string variables work a little different from other kind of models. This is important for two main reasons.
+First of all, just like any other web framework or web application, their internal format must be `Record<string, string>`.
+As a workaround, RIO looks for two special query string keys: data and __isbase64.
+If you provide them RIO directly assumes that there is some information in base64 format in data key.
+Thus, whatever you put into data overwrites the query string variables and your final data become `Record<string, any>` format.
+
+Secondly, to be able to validate queryStringModel, RIO tries to convert each variable to expected type.
+RIO supports only primitive types for this feature.
+After the conversion phase, RIO checks if the data is valid.
+
+```typescript
+const model = {
+    "type": "object",
+    "properties": {
+        "chars": { "type": "string" },
+        "num1": { "type": "number" },
+    },
+    "required": [ "num1" ],
+    "additionalProperties": false
+}
+
+const queryStringData = { chars: 'XyZ!', num1: '1', num2: '2' }
+```
+
+> Before validation, RIO converts each type according to the model.
+
 ## Adding Models to Methods
 
 After we created the model (in this example CreateTodoInput and CreateTodoOutput), we should add the model to the method file which we are going to use.
