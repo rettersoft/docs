@@ -121,13 +121,13 @@ methods:
 Models for query string variables work a little different from other kind of models. This is important for two main reasons.
 
 First of all, just like any other web framework or web application, their internal format must be `Record<string, string>`.
-As a workaround, RIO looks for two special query string keys: data and __isbase64.
+As a workaround, RIO looks for two special query string keys: data:string and __isbase64:boolean.
 If you provide them RIO directly assumes that there is some information in base64 format in data key.
 Thus, whatever you put into data overwrites the query string variables and your final data become `Record<string, any>` format.
 
 Secondly, to be able to validate queryStringModel, RIO tries to convert each variable to expected type.
-RIO supports only primitive types for this feature.
-After the conversion phase, RIO checks if the data is valid.
+Only primitive types are supported for this feature.
+After the conversion phase, RIO checks if the data is valid and sends the original data to the handler method.
 
 ```typescript
 const model = {

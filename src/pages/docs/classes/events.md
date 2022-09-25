@@ -21,6 +21,8 @@ data.events.push({ name: 'CUSTOM_EVENT', payload: { a: 1, b: 2 } })
               EX: true
 ```
 
+> You cannot subscribe write methods to events.
+
 ---
 
 ## API Reference
