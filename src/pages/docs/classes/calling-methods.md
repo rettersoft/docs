@@ -97,9 +97,9 @@ async getInstance(input: GetInstance): Promise<CloudObjectResponse | undefined> 
 }
 ```
 
-## API Reference
+### API Reference
 
-### Get / Init Instances
+#### Get / Init Instances
 
 | Parameter         | Type                | Required            | Description         |
 | ----------------- | ------------------- | ------------------- | ------------------- |
@@ -112,7 +112,7 @@ async getInstance(input: GetInstance): Promise<CloudObjectResponse | undefined> 
 | lookupKey         | { name: string;  value: string } | false  | Look up key for determining instance ID |
 | retryConfig       | { delay: number;  count: number;  rate: number } | false | Retry configuration |
 
-### Call Methods
+#### Call Methods
 
 | Parameter         | Type                | Required            | Description         |
 | ----------------- | ------------------- | ------------------- | ------------------- |
