@@ -68,6 +68,66 @@ await cloudObject.sayHello({
 
 ---
 
+## From RDK
+
+You can call methods from your classes and create new instances from your classes via RDK.
+
+```typescript
+export interface GetInstance {
+    httpMethod?: string
+    queryStringParams?: Record<string, any>
+    headers?: KeyValueString
+    body?: any
+    classId: string
+    instanceId?: string
+    lookupKey?: { name: string;  value: string }
+}
+
+export interface MethodCall extends GetInstance {
+    methodName: string
+    retryConfig?: { delay: number;  count: number;  rate: number }
+}
+
+async methodCall(input: MethodCall): Promise<CloudObjectResponse | undefined> {
+    // ...
+}
+
+async getInstance(input: GetInstance): Promise<CloudObjectResponse | undefined> {
+    // ...
+}
+```
+
+## API Reference
+
+### Get / Init Instances
+
+| Parameter         | Type                | Required            | Description         |
+| ----------------- | ------------------- | ------------------- | ------------------- |
+| httpMethod        | string              | false               | HTTP method |
+| queryStringParams | Record<string, any> | false               | Query string parameters |
+| headers           | Record<string, any> | false               | Headers |
+| body              | any                 | false               | Request body |
+| classId           | string              | true                | Class ID |
+| instanceId        | string              | false               | Instance ID |
+| lookupKey         | { name: string;  value: string } | false  | Look up key for determining instance ID |
+| retryConfig       | { delay: number;  count: number;  rate: number } | false | Retry configuration |
+
+### Call Methods
+
+| Parameter         | Type                | Required            | Description         |
+| ----------------- | ------------------- | ------------------- | ------------------- |
+| httpMethod        | string              | false               | HTTP method |
+| queryStringParams | Record<string, any> | false               | Query string parameters |
+| headers           | Record<string, any> | false               | Headers |
+| body              | any                 | false               | Request body |
+| classId           | string              | true                | Class ID |
+| instanceId        | string              | false               | Instance ID |
+| lookupKey         | { name: string;  value: string } | false  | Look up key for determining instance ID |
+| methodName        | string              | true                | Method name |
+| retryConfig       | { delay: number;  count: number;  rate: number } | false | Retry configuration |
+
+---
+
 ## Rest Endpoint
 
 Every call made to instance methods are actually calls made to REST endpoints.
