@@ -50,13 +50,13 @@ Save this file to your project, name it rio.ts and import it like this:
 ```typescript
 import {
   SayHelloInput, // Example model
-  RioClasses
+  Classes
 } from './rio'
 
 Then you can do this:
 
 // Pass the rio sdk client you created earlier.
-const cloudObject = await RioClasses.Test.getInstance(rio)
+const cloudObject = await Classes.Test.getInstance(rio)
 
 // You can find the methods and parameters as types in your typescript code.
 await cloudObject.sayHello({
