@@ -98,6 +98,15 @@ authorizer: index.authorizer
 init:
   handler: index.init
   inputModel: UserProfileInputModel
+  outputModel: ProfileModel
+  errorModel: ErrorModel
+  queryStringModel: ProfileQSModel
+get:
+  handler: index.getInstance
+  inputModel: UserProfileGetModel
+  outputModel: ProfileModel
+  errorModel: ErrorModel
+  queryStringModel: ProfileQSModel
 getState: index.getState
 getInstanceId: index.getInstanceId
 methods:
@@ -105,6 +114,7 @@ methods:
     inputModel: StoreInfo
     outputModel: ProfileModel
     errorModel: ErrorModel
+    queryStringModel: ProfileQSModel
     type: WRITE
     handler: index.update
 
@@ -112,6 +122,7 @@ methods:
     queryStringModel: UserProfileParamsModel
     outputModel: ProfileModel
     errorModel: ErrorModel
+    queryStringModel: ProfileQSModel
     type: READ
     handler: index.profile
 ```
