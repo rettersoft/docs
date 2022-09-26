@@ -88,13 +88,31 @@ export interface MethodCall extends GetInstance {
     retryConfig?: { delay: number;  count: number;  rate: number }
 }
 
-async methodCall(input: MethodCall): Promise<CloudObjectResponse | undefined> {
+async function methodCall(input: MethodCall): Promise<CloudObjectResponse | undefined> {
     // ...
 }
 
-async getInstance(input: GetInstance): Promise<CloudObjectResponse | undefined> {
+async function getInstance(input: GetInstance): Promise<CloudObjectResponse | undefined> {
     // ...
 }
+```
+
+### Usage
+
+```typescript
+import RDK from '@retter/rdk'
+
+const rdk = new RDK()
+
+await rdk.getInstance({ classId: 'MyClass', body: {} })
+await rdk.getInstance({ classId: 'MyClass', instanceId: 'myInstanceId' })
+await rdk.methodCall({ classId: 'MyClass', instanceId: 'myInstanceId', methodName: 'myMethod' })
+
+await rdk.pipeline()
+    .getInstance({ classId: 'MyClass', body: {} })
+    .getInstance({ classId: 'MyClass', instanceId: 'myInstanceId' })
+    .methodCall({ classId: 'MyClass', instanceId: 'myInstanceId', methodName: 'myMethod' })
+    .send()
 ```
 
 ### API Reference
