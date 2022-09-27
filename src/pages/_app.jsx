@@ -61,6 +61,13 @@ const navigation = [
       { title: 'Caching', href: '/docs/operations/caching' },
     ],
   },
+  {
+    title: 'Samples',
+    links: [
+      { title: 'Email/Password Auth', href: '/docs/samples/email-password-auth' },
+      
+    ],
+  },
 ]
 
 function getNodeText(node) {
