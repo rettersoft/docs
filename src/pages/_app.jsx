@@ -36,6 +36,7 @@ const navigation = [
     links: [
       { title: 'The Concept', href: '/docs/classes/the-concept' },
       { title: 'Templates', href: '/docs/classes/templates' },
+      { title: 'Lifecycle of an object', href: '/docs/classes/lifecycle' },
       { title: 'Instances', href: '/docs/classes/instances' },
       { title: 'Delegate Methods', href: '/docs/classes/delegate-methods' },
       { title: 'Methods', href: '/docs/classes/methods' },
@@ -59,6 +60,7 @@ const navigation = [
       { title: 'Static IP Calls', href: '/docs/operations/static-ip-calls' },
       { title: 'Deployment', href: '/docs/operations/deployment' },
       { title: 'Caching', href: '/docs/operations/caching' },
+      { title: 'Bulk Import', href: '/docs/operations/bulk-import' },
     ],
   },
   {
