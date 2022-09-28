@@ -59,6 +59,7 @@ const navigation = [
       { title: 'Static IP Calls', href: '/docs/operations/static-ip-calls' },
       { title: 'Deployment', href: '/docs/operations/deployment' },
       { title: 'Caching', href: '/docs/operations/caching' },
+      { title: 'Bulk Import', href: '/docs/operations/bulk-import' },
     ],
   },
   {
