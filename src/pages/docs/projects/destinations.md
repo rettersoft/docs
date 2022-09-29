@@ -14,14 +14,14 @@ To configure your retry behavior, you should provide delay and max count.
 
 ```typescript
 {
-    _public: {}, // public state
-    _user: {
+    public: {}, // public state
+    user: {
         [userId]: {} // state available to userId
     },
-    _role: {
+    role: {
         [roleId]: {} // state available to roleId
     },
-    _private: {}, // private state
+    private: {}, // private state
 }
 ```
 
