@@ -40,7 +40,7 @@ Now let's define a JSON schema model for our register method. Create a new file 
 ```json
 {
   "type": "object",
-  "required": ["firstName", "lastName", "age", "password"],
+  "required": ["firstName", "lastName", "email", "password"],
   "properties": {
     "firstName": {
       "type": "string",
