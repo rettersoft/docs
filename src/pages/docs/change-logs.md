@@ -3,6 +3,15 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.5
+
+This version was released on October 3, 2022.
+
+- Subscribing events from multiple classes support added.
+- Validation errors improved in QUEUED_WRITE method response.
+- **BUG FIX:** Session name length fixed in assumed roles for operations.
+- **BUG FIX:** Overwriting private state before pushing to destinations fixed.
+
 ## v1.2.4
 
 This version was released on September 29, 2022.
