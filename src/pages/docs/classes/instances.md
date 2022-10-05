@@ -6,6 +6,11 @@ description: Except for static methods, everything else in a Rio class is instan
 Except for static methods, everything else in a Rio class is instance-based.
 
 ---
+## Creating a new instance
+
+When creating a new instance INIT delegate method is called. Check init documentation [here](/docs/classes/delegate-methods#init).
+
+Lifecycle of an instance is documented [here](/docs/classes/lifecycle).
 
 ## State
 
@@ -21,7 +26,7 @@ You can store JSON serializable data in your state by 4 different access level: 
 
 > A state of a single instance cannot be larger than 5 MB.
 > If your class works in accelerated mode, the limit is 100 KB.
-> There is also a storage limit for total size of your states. By default, you have 100 MB storage to keep your states.
+
 
 ### What Do You Do With State?
 
@@ -52,3 +57,4 @@ export async function getState(data: Data): Promise<Response> {
 
 Actually any method can be used to returning part of or full state to any caller. getState is a special method used in developer console.
 Other than that you can write another method and use it from your clients.
+

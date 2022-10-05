@@ -34,7 +34,9 @@ module.exports = {
 }
 ```
 
-In order to use dependency, you need to import it in your class' template file.
+In order to use dependency, you need to import it in your class' template file. 
+
+> You can add up to 5 dependencies to your classes.
 
 ```yaml
 # classes/User/template.yml
