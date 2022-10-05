@@ -3,6 +3,30 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.5
+
+This version was released on October 3, 2022.
+
+- Subscribing events from multiple classes support added.
+- Validation errors improved in QUEUED_WRITE method response.
+- **BUG FIX:** Session name length fixed in assumed roles for operations.
+- **BUG FIX:** Overwriting private state before pushing to destinations fixed.
+
+## v1.2.4
+
+This version was released on September 29, 2022.
+
+- VTL support added for destinations.
+- Bulk import operation added via RDK.
+- Various metadata (modifier details) added to instance documents.
+- Custom JSON and YAML files accepted in source code.
+- Remote deployment automation simplified by removing AWS SES dependency.
+- Invitation / OTP conflict fixed.
+- Garbage collector improved.
+- **BUG FIX:** Instance flag removed from cache when a class deleted
+
+> Some features require RDK v1.3.8 to be able to work properly.
+
 ## v1.2.3
 
 This version was released on September 15, 2022.
