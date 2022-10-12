@@ -29,8 +29,8 @@ When getting an instance, authorizer is called with data.context.methodName = 'G
 
 ### init
 
-It should initialize and make some configurations for the new instance. This method is called only once for the same instanceId. If you return same ID from getInstanceId then this method is not called the second time.
+It should initialize and make some configurations for the new instance. This method is called only once for the same instanceId. If you return same ID from getInstanceId then this method is not called the second time. [Click for more details.](/docs/classes/delegate-methods#init)
 
 ### destroy
 
-Upon deletion of an instance "destroy" delegate method is called. You can do final cleanup here. This method can prevent instance deletion by returning a status code other than 200.
+Upon deletion of an instance "destroy" delegate method is called. You can do final cleanup here. This method can prevent instance deletion by returning a status code other than 200. [Click for more details.](/docs/classes/delegate-methods#init)

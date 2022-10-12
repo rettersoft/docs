@@ -129,14 +129,14 @@ methods:
 
 ### Query String Validation
 
-To validate data sent in querystrings you need to define validation in queryStringInputModel field like this:
+To validate data sent in querystrings you need to define validation in queryStringModel field like this:
 
 ```yaml
 init: index.init
 getState: index.getState
 methods:
   - method: sayHello
-    queryStringInputModel: SayHelloInput
+    queryStringModel: SayHelloInput
     tag: test
     handler: index.sayHello
 ```

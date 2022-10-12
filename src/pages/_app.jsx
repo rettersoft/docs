@@ -41,6 +41,7 @@ const navigation = [
       { title: 'Delegate Methods', href: '/docs/classes/delegate-methods' },
       { title: 'Methods', href: '/docs/classes/methods' },
       { title: 'Calling Methods', href: '/docs/classes/calling-methods' },
+      // { title: 'Input Validation', href: '/docs/classes/input-validation' },
       { title: 'Tasks & Scheduling', href: '/docs/classes/tasks-scheduling' },
       { title: 'Events', href: '/docs/classes/events' },
       { title: 'Method Data & Context', href: '/docs/classes/method-data-context' },
