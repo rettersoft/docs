@@ -3,6 +3,16 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.6
+
+This version was released on October 12, 2022.
+
+- Authentication rules added.
+- Custom domain support added for RIO API endpoint.
+- Support for accessing lookup keys from multiple classes added.
+- Some special characters (!,#,%) are not allowed in lookup keys anymore.
+- Destination messages singularized against deduplication protection.
+
 ## v1.2.5
 
 This version was released on October 3, 2022.
