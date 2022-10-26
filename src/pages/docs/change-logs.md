@@ -3,6 +3,17 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.9
+
+This version was released on October 27, 2022.
+
+- Scan job status changes fixed and methods changed to QUEUED_WRITE.
+- Project user's authentication moved from root project to core api.
+- Prefix added to instance id list in RDK.
+- listInstanceIds method's response model fixed in RDK.
+
+> Some features require RDK v1.3.9 to be able to work properly.
+
 ## v1.2.6
 
 This version was released on October 12, 2022.
