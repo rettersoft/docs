@@ -3,6 +3,17 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v1.2.12
+
+This version was released on November 10, 2022.
+
+- Max 500 KB allowed for internal logs and max. 5 KB allowed for gray log adapter.
+- AUTH structure moved to core from root project.
+- Database operations memory feature's cache writes optimized.
+- If there is getInstanceId delegate method, instanceId added to authorizer context in INIT flow.
+- Missing logs during shutdown fixed.
+- Storage and write metrics added.
+
 ## v1.2.9
 
 This version was released on October 27, 2022.
