@@ -3,6 +3,19 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v2.0.0
+
+- Removed data.context.action from the data object.
+- Moved data.context.pathParameters to data.methodRequest.pathParameters.
+- Removed data.schedule from the data object.
+- Changed the init delegate response type from InitResponse to StepResponse.
+- Deprecated architectures and tags fields in the class template.
+- Removed support for x86 architectures.
+- Combined separate package.json files in the class folders into a single package.json file located at the root path of the project.
+- If the "aws-sdk" npm package is used in a project, it must now be added to the package.json file, unlike before.
+- Replaced "none" identity with "anonymous_user" for consistency.
+- It is recommended to use new versions of @retter/rdk and @retter/rio-cli.
+
 ## v1.2.12
 
 This version was released on November 10, 2022.
