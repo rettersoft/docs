@@ -60,6 +60,5 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 | inputModel    | string              | false               | Name of the validation model for input body |
 | outputModel   | string              | false               | Name of the validation model for output body |
 | errorModel    | string              | false               | Name of the validation model for error response |
-| methodGroupId | string              | false               | Expression to dissociate fifo queues in method-scope |
 | handler       | string              | true                | Handler method's path. (*filename.methodName*) |
 | schedule      | string              | false               | Schedule rule. It's only available for STATIC methods. |

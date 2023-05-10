@@ -179,7 +179,7 @@ After we add the models to our method, we can use autocomplete to use our models
 // index.ts
 import { CreateTodoInput, CreateTodoOutput } from './rio'
 
-export async function createTodo(data: Data<CreateTodoInput, CreateTodoOutput>): Promise<StepResponse> {
+export async function createTodo(data: Data<CreateTodoInput, CreateTodoOutput>): Promise<Data> {
     const { task } = data.request.body // autocompleted
 
     data.response = {

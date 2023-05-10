@@ -62,12 +62,12 @@ You can add dependency source code into a zip file and create dependency.
 ```typescript
 classes/User/profile.ts
 
-import RDK, {Data,StepResponse} from "@retter/rdk";
+import RDK, {Data} from "@retter/rdk";
 import AdmZip from "adm-zip";
 
 const rdk = new RDK();
 
-export async function generateCloudDependency(data: Data): Promise<StepResponse> {
+export async function generateCloudDependency(data: Data): Promise<Data> {
     const customData = {
         userName: 'John Doe',
         isAwesome: true,
