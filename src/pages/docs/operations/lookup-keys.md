@@ -19,13 +19,17 @@ interface LookUpKey {
     }
 }
 
+interface GetLookUpKey extends LookUpKey {
+    classId?: string
+}
+
 interface OperationResponse {
     success: boolean
     data?: any
     error?: string
 }
 
-async function getLookUpKey(input: LookUpKey): Promise<OperationResponse | undefined> {
+async function getLookUpKey(input: GetLookUpKey): Promise<OperationResponse | undefined> {
     // ...
 }
 
@@ -48,6 +52,7 @@ import RDK from '@retter/rdk'
 const rdk = new RDK()
 
 await rdk.getLookupKey({ key: { name: 'msisdn', value: '905987654321' } })
+await rdk.getLookupKey({ classId: 'SampleClass', key: { name: 'msisdn', value: '905987654321' } })
 await rdk.setLookupKey({ key: { name: 'msisdn', value: '905987654321' } })
 await rdk.deleteLookupKey({ key: { name: 'msisdn', value: '905987654321' } })
 
@@ -67,6 +72,12 @@ await rdk.pipeline()
 | Parameter     | Type                | Required            | Description         |
 | ------------- | ------------------- | ------------------- | ------------------- |
 | key           | { name: string, value: string } | true                | Lookup key's name and value |
+
+### Get Lookup Key Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| classId       | string              | false               | Class id that instance id belongs to |
 
 ### Operation Output
 
