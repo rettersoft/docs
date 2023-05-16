@@ -72,3 +72,13 @@ When you set an integer greater than zero, core will limit concurrent threads to
 | method                | string                                  | true                | Http method |
 | url                   | string                                  | true                | Request url |
 | headers.<header_name> | string                                  | false               | Request header's name and value |
+
+### Dynamic Parameters In Destination Configuration
+
+Destinations support VTL templates to allow you provide dynamic values in configuration.
+There are 3 different resources for accessing dynamic values: context, environment variables and state.
+You can access context and state via *$data* parameter while accessing environment variables through their own parameter called *$env*.
+
+```text
+http://mydomain.com/$data.context.instanceId/$data.state.private.valueFromPrivateState/$env.ENV_VAR
+```

@@ -27,6 +27,16 @@ In Rio, you can access request and response logs through developer console in mo
 Rio has graylog support as a log adapter to send all logs to your graylog server.
 All you have to do is that you add a log adapter by providing **endpoint**, **username** and **password**.
 
+### Dynamic Parameters In Log Adapter Configuration
+
+Log adapters support VTL templates to allow you provide dynamic values in configuration.
+There are 3 different resources for accessing dynamic values: context, environment variables and state.
+You can access context and state via *$data* parameter while accessing environment variables through their own parameter called *$env*.
+
+```text
+http://mydomain.com/$data.context.instanceId/$data.state.private.valueFromPrivateState/$env.ENV_VAR
+```
+
 ## Tracing Adapters
 
 In Rio, you can enable tracing mode for your project.
