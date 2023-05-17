@@ -24,7 +24,6 @@ methods:
 
 | Parameter     | Type                | Required            | Description         |
 | ------------- | ------------------- | ------------------- | ------------------- |
-| architecture  | string (arm64, x86_64) | false            | Architecture for methods. Default value is arm64 which is faster. |
 | accelerated   | boolean             | false               | Flag to decide whether to cache instances or not |
 | authorizer    | string              | false               | Delegate method for authorization. (*filename.methodName*) |
 | destroy       | string              | false               | Delegate method for approving instance deletion. (*filename.methodName*) |
@@ -34,6 +33,7 @@ methods:
 | getState      | string              | false               | Delegate method for returning states conditionally |
 | dependencies  | string[]            | false               | Custom dependencies to use in deployment |
 | destinations  | string[]            | false               | Custom destinations to use on state changes |
+| logMasks      | Array<{ path: string }> | false           | Log masks. Please see [Logs](https://docs.retter.io/docs/projects/logs#log-masking) section for more details. |
 | methods       | Method[]            | false               | Method definitions |
 | description   | string              | false               | Description to put into the auto-generated documentation. |
 
