@@ -42,3 +42,21 @@ You can filter them by attributes below:
 - **month :** Month
 - **day :** Day
 - **hour :** Hour
+
+## Log Masking
+
+You can exclude your sensitive data from log records by simply masking them out in your class templates.
+You can target only request and response objects in your method's payload.
+Please see usage of logMasks parameter below.
+
+```yaml
+init: index.init
+methods:
+  - method: hello
+    handler: index.hello
+logMasks:
+  - path: "request.headers.api_key"
+  - path: "request.body.password"
+  - path: "response.headers.next_token"
+  - path: "response.body.msisdn"
+```
