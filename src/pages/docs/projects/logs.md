@@ -47,6 +47,7 @@ You can filter them by attributes below:
 
 You can exclude your sensitive data from log records by simply masking them out in your class templates.
 You can target only request and response objects in your method's payload.
+
 Please see usage of logMasks parameter below.
 
 ```yaml
