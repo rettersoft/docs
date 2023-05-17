@@ -19,6 +19,7 @@ data.tasks property is an array of Task items which looks like this:
 export interface Task {
     classId?: string;
     instanceId?: string;
+    lookupKey?: { name: string; value: string };
     payload?: any;
     method: string;
     after: number;
