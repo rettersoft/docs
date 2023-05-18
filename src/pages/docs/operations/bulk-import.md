@@ -21,6 +21,10 @@ interface OperationResponse {
     error?: string
 }
 
+export interface BulkImportResponse extends OperationResponse {
+    data?: { execution: string, startDate?: string }
+}
+
 async function bulkImport(input: BulkImport): Promise<OperationResponse | undefined> {
     // ...
 }
@@ -51,3 +55,11 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | getInstance   | GetInstance[]       | false               | Bulk getInstance requests |
 | methodCall    | MethodCall[]        | false               | Bulk methodCall requests |
+
+### Bulk Import Response
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { execution: string, startDate?: string } | false            | Successful response |
+| error         | string              | false               | Reason of failure |

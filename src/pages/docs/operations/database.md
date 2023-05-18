@@ -17,11 +17,13 @@ interface WriteToDatabase {
     memory?: boolean
     data: Record<string, any>
 }
+
 interface ReadDatabase {
     partKey: string
     sortKey: string
     memory?: boolean
 }
+
 interface QueryDatabase {
     partKey: string
     beginsWith?: string
@@ -31,6 +33,7 @@ interface QueryDatabase {
     nextToken?: string
     limit?: number
 }
+
 interface RemoveFromDatabase {
     partKey: string
     sortKey: string
@@ -42,13 +45,22 @@ interface OperationResponse {
     error?: string
 }
 
+export interface ReadDatabaseResponse extends OperationResponse {
+    data?: { part: string, sort: string, data?: any }
+}
+
+export type DatabaseOutput = { partKey: string, sortKey: string, data?: any }
+export interface QueryDatabaseResponse extends OperationResponse {
+    data?: { items?: DatabaseOutput[], nextToken?: string }
+}
+
 async function writeToDatabase(input: WriteToDatabase): Promise<OperationResponse | undefined> {
     // ...
 }
-async function readDatabase(input: ReadDatabase): Promise<OperationResponse | undefined> {
+async function readDatabase(input: ReadDatabase): Promise<ReadDatabaseResponse | undefined> {
     // ...
 }
-async function queryDatabase(input: QueryDatabase): Promise<OperationResponse | undefined> {
+async function queryDatabase(input: QueryDatabase): Promise<QueryDatabaseResponse | undefined> {
     // ...
 }
 async function removeFromDatabase(input: RemoveFromDatabase): Promise<OperationResponse | undefined> {
@@ -125,4 +137,20 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | success       | boolean             | true                | Returns true if operation is successful |
 | data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |
+
+### Read Database Response
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { part: string, sort: string, data?: any } | false              | Successful response |
+| error         | string              | false               | Reason of failure |
+
+### Query Database Response
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { items?: DatabaseOutput[], nextToken?: string } | false        | Successful response |
 | error         | string              | false               | Reason of failure |

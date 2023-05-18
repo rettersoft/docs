@@ -29,6 +29,10 @@ interface OperationResponse {
     error?: string
 }
 
+export interface GetLookupKeyResponse extends OperationResponse {
+    data?: { instanceId: string }
+}
+
 async function getLookUpKey(input: GetLookUpKey): Promise<OperationResponse | undefined> {
     // ...
 }
@@ -85,4 +89,12 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | success       | boolean             | true                | Returns true if operation is successful |
 | data          | any                 | false               | Successful response |
+| error         | string              | false               | Reason of failure |
+
+### Get Lookup Key Response
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { instanceId: string } | false            | Successful response |
 | error         | string              | false               | Reason of failure |
