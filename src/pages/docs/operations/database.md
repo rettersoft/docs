@@ -18,6 +18,14 @@ interface WriteToDatabase {
     data: Record<string, any>
 }
 
+interface IncrementDatabase {
+    partKey: string
+    sortKey: string
+    path?: string
+    value: number
+    memory?: boolean
+}
+
 interface ReadDatabase {
     partKey: string
     sortKey: string
@@ -55,6 +63,9 @@ export interface QueryDatabaseResponse extends OperationResponse {
 }
 
 async function writeToDatabase(input: WriteToDatabase): Promise<OperationResponse | undefined> {
+    // ...
+}
+async function incrementDatabase(input: IncrementDatabase): Promise<OperationResponse | undefined> {
     // ...
 }
 async function readDatabase(input: ReadDatabase): Promise<ReadDatabaseResponse | undefined> {
@@ -100,9 +111,19 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | partKey       | string              | true                | Partition key of the record |
 | sortKey       | string              | true                | Sort key of the record |
-| memory        | string              | false               | Flag to decide whether to put the data into memory or not |
+| memory        | boolean             | false               | Flag to decide whether to put the data into memory or not |
 | expireAt      | number              | false               | Time to live in seconds |
 | data          | Record<string, any> | true                | Actual data of the record |
+
+### Increment Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+| sortKey       | string              | true                | Sort key of the record |
+| path          | string              | false               | Path to increase the value. If you don't provide it, data will end up as a number |
+| memory        | boolean             | false               | Flag to decide whether to put the data into memory or not |
+| value         | number              | true                | Amount |
 
 ### Read Database Input
 
@@ -110,7 +131,7 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | partKey       | string              | true                | Partition key of the record |
 | sortKey       | string              | true                | Sort key of the record |
-| memory        | string              | false               | Flag to decide whether to put the data into memory or not |
+| memory        | boolean             | false               | Flag to decide whether to put the data into memory or not |
 
 ### Remove From Database Input
 
