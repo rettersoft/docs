@@ -29,6 +29,7 @@ const navigation = [
       { title: 'Logs', href: '/docs/projects/logs' },
       { title: 'Settings', href: '/docs/projects/settings' },
       { title: 'Destinations', href: '/docs/projects/destinations' },
+      { title: 'Authentication Rules', href: '/docs/projects/authentication-rules' },
     ],
   },
   {

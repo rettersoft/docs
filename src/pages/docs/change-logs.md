@@ -5,16 +5,17 @@ description: A summary explanation about content of each version
 
 ## v2.0.0
 
-- Removed data.context.action from the data object.
-- Moved data.context.pathParameters to data.methodRequest.pathParameters.
-- Removed data.schedule from the data object.
-- Changed the init delegate response type from InitResponse to StepResponse.
-- Deprecated architectures and tags fields in the class template.
+- Removed `data.context.action` from the `data` object.
+- Moved `data.context.pathParameters` to `data.methodRequest.pathParameters`.
+- Removed `data.schedule` and `data.events` from the `data` object.
+- Changed the init delegate response type from `InitResponse` to `StepResponse`.
+- Deprecated `architectures` and `tags` fields in the class template.
 - Removed support for x86 architectures.
-- Combined separate package.json files in the class folders into a single package.json file located at the root path of the project.
-- If the "aws-sdk" npm package is used in a project, it must now be added to the package.json file, unlike before.
+- Combined separate `package.json` files in the class folders into a single file located at the root path of the project. Class based `package.json` files are now redundant.
+- If the "aws-sdk" npm package is used in a project, it must now be added to the `package.json` file.
 - Replaced "none" identity with "anonymous_user" for consistency.
-- It is recommended to use new versions of @retter/rdk and @retter/rio-cli.
+- New versions of `@retter/rdk` and `@retter/rio-cli` should be used.
+- Cache-Control header in the "authorizer" is now redundant.
 
 ## v1.2.12
 
