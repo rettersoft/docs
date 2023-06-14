@@ -24,8 +24,34 @@ For example, in nodejs, you can access them via *process.env*
 ## Log Adapters
 
 In Rio, you can access request and response logs through developer console in most cases, projects might require more sophisticated query options.
-Rio has graylog support as a log adapter to send all logs to your graylog server.
-All you have to do is that you add a log adapter by providing **endpoint**, **username** and **password**.
+Rio has two different types of log adapters to send all logs to your third party services.
+
+### Http Log Adapter
+
+Http Log Adapter is for general purposes. You can receive all of your logs via an HTTP API and send them to wherever you want to.
+
+```typescript
+interface HttpLogAdapter {
+    type: 'HTTP'
+    endpoint: string
+    apiKey: string
+}
+```
+
+### Kinesis Log Adapter
+
+Kinesis Log Adapter supports directly AWS Kinesis service that requires no custom implementation for receiving logs.
+On the other hand, you need to implement a consumer on your AWS account for processing your logs in batches.
+
+```typescript
+interface HttpLogAdapter {
+    type: 'KINESIS'
+    streamName: string
+    accessKeyId: string
+    secretAccessKey: string
+    region: string
+}
+```
 
 ### Dynamic Parameters In Log Adapter Configuration
 
