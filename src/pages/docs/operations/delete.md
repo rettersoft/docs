@@ -1,11 +1,12 @@
 ---
-title: Deployment
-description: You can deploy your classes via RDK.
+title: Delete Classes & Instances
+description: You can delete your classes and instances via RDK.
 ---
 
-You can deploy your classes via RDK.
+You can delete your classes and instances via RDK.
 
-> You cannot deploy more than 5 classes in parallel.
+> You cannot delete more than 10 classes in parallel.
+> You cannot delete more than 10 instances in parallel.
 
 ```typescript
 interface DeleteClass {
