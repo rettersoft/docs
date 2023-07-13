@@ -43,8 +43,11 @@ interface QueryDatabase {
     limit?: number
 }
 
-interface RemoveFromDatabase {
+interface RemovePartitionFromDatabase {
     partKey: string
+}
+
+interface RemoveFromDatabase extends RemovePartitionFromDatabase {
     sortKey: string
 }
 
@@ -78,6 +81,9 @@ async function queryDatabase(input: QueryDatabase): Promise<QueryDatabaseRespons
 async function removeFromDatabase(input: RemoveFromDatabase): Promise<OperationResponse | undefined> {
     // ...
 }
+async function removePartitionFromDatabase(input: RemovePartitionFromDatabase): Promise<OperationResponse | undefined> {
+    // ...
+}
 ```
 
 ---
@@ -96,9 +102,11 @@ await rdk.removeFromDatabase({ partKey: 'my-part', sortKey: 'my-sort' })
 
 await rdk.pipeline()
     .writeToDatabase({ partKey: 'my-part', sortKey: 'my-sort', memory: true, data: { key: 'value' } })
+    .writeToDatabase({ partKey: 'my-part', sortKey: 'my-other-sort', memory: true, data: { key: 'value2' } })
     .readDatabase({ partKey: 'my-part', sortKey: 'my-sort', memory: true })
     .queryDatabase({ partKey: 'my-part', beginsWith: 'my', limit: 10 })
     .removeFromDatabase({ partKey: 'my-part', sortKey: 'my-sort' })
+    .removePartitionFromDatabase({ partKey: 'my-part' })
     .send()
 ```
 
@@ -141,6 +149,12 @@ await rdk.pipeline()
 | partKey       | string              | true                | Partition key of the record |
 | sortKey       | string              | true                | Sort key of the record |
 
+### Remove Partition From Database Input
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| partKey       | string              | true                | Partition key of the record |
+
 ### Query Database Input
 
 | Parameter     | Type                | Required            | Description         |
@@ -167,6 +181,14 @@ await rdk.pipeline()
 | ------------- | ------------------- | ------------------- | ------------------- |
 | success       | boolean             | true                | Returns true if operation is successful |
 | data          | { part: string, sort: string, data?: any } | false              | Successful response |
+| error         | string              | false               | Reason of failure |
+
+### Remove Partition From Database Response
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| success       | boolean             | true                | Returns true if operation is successful |
+| data          | { executionId: string } | false              | Successful response |
 | error         | string              | false               | Reason of failure |
 
 ### Query Database Response
