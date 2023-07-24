@@ -16,9 +16,9 @@ const navigation = [
     ],
   },
   {
-    title: 'Projects Components',
+    title: 'Project Components',
     links: [
-      { title: 'Classes', href: '/docs/project-componenets/the-concept' },
+      { title: 'Classes', href: '/docs/project-components/classes' },
       { title: 'Dependencies', href: '/docs/project-components/dependencies' },
       { title: 'Models', href: '/docs/project-components/models' },
     ],
