@@ -272,13 +272,11 @@ Thus, next WRITE method is able to execute, even if there are lots of pending re
 
 Data object used in every method call has some useful attributes. Mainly they are; Request, Response, State and Context.
 
-## Method Data
+### Method Data
 
-### Request
+#### Request
 
 Contains information about the request method has received. Has the following form:
-
-#### Request Model
 
 ```typescript
 interface Request<T = any> {
@@ -290,19 +288,15 @@ interface Request<T = any> {
 }
 ```
 
-#### Request Example
-
 ```typescript
 if(data.request.httpMethod==='POST'){
     const userMessage=data.request.body.userMessage
 }
 ```
 
-### Response
+#### Response
 
 Using the response, anything can be returned in the body.
-
-#### Response Model
 
 ```typescript
 interface Response<T = any> {
@@ -313,8 +307,6 @@ interface Response<T = any> {
 }
 ```
 
-#### Response Example
-
 ```typescript
 if(calculationResult==='correct'){
     data.response={
@@ -324,11 +316,9 @@ if(calculationResult==='correct'){
 return data;
 ```
 
-### Context
+#### Context
 
 Context has the metadata values of data.
-
-#### Context Model
 
 ```typescript
 interface Context {
@@ -361,11 +351,9 @@ interface Context {
 }
 ```
 
-### State
+#### State
 
 State represents the state of that instance. Contrary to public, private object can not be accessed from other instances.
-
-#### State Model
 
 ```typescript
 interface State {
@@ -376,89 +364,50 @@ interface State {
 }
 ```
 
----
+#### Tasks
 
-### Validation
+Sometimes you may want to make another method request but don't need back an immediate response.
+Let's say you have created an order and you would like to send it to Reporting class.
+You can trigger a method call by setting data.tasks property.
 
-Rio has an optional built-in validation with JSON schema models.
-After adding a valid JSON schema into models, you assign them to your methods as input, output, query string or error model.
-Rio will evaluate the data with your model and inform the client accordingly.
+data.tasks property is an array of Task items which looks like this:
 
-Let's say we have a model called SayHelloInput
-
-```json
-{
-  "type": "object",
-  "required": [
-    "firstName"
-  ],
-  "properties": {
-    "firstName": {
-      "type": "string",
-      "description": "The person's first name."
-    },
-    "lastName": {
-      "type": "string",
-      "description": "The person's last name."
-    },
-    "age": {
-      "description": "Age in years which must be equal to or greater than zero.",
-      "type": "integer",
-      "minimum": 0
-    }
-  }
+```typescript
+export interface Task {
+    classId?: string;
+    instanceId?: string;
+    lookupKey?: { name: string; value: string };
+    payload?: any;
+    method: string;
+    after: number;
 }
 ```
 
-#### Post Body Validation
+Below example triggers two different methods, one for the same instance another one to another class' instance.
 
-To validate a post body you need to define validation in inputModel field like this:
-
-```yaml
-init: index.init
-getState: index.getState
-methods:
-  - method: sayHello
-    inputModel: SayHelloInput
-    tag: test
-    handler: index.sayHello
-```
-
-#### Query String Validation
-
-To validate data sent in querystrings you need to define validation in queryStringModel field like this:
-
-```yaml
-init: index.init
-getState: index.getState
-methods:
-  - method: sayHello
-    queryStringModel: SayHelloInput
-    tag: test
-    handler: index.sayHello
-```
-
-#### Error Validations
-
-Rio uses AJV for model validation. If a validation fails Rio returnes a response with status code: 400.
-
-```json
-{
-  "code": "VALIDATION",
-  "message": "Model validation has been failed.",
-  "issues": [
+```typescript
+data.tasks = [
     {
-      "instancePath": "",
-      "schemaPath": "#/required",
-      "keyword": "required",
-      "params": {
-        "missingProperty": "firstName"
-      },
-      "message": "must have required property 'firstName'"
+        after: 5,
+        method: "someMethod"
+    },
+    {
+        after: 0,
+        method: "someOtherMethodOnAnotherClass",
+        classId: "OtherClass",
+        instanceId: "other-instance-id",
+        payload: { foo: 'bar' }
     }
-  ]
-}
+]
 ```
+
+- **after :** Defined in seconds. You can define a delay for all kinds of methods. This means execute the method after the provided amount of seconds delay. We currently support delays up to 1 year. (31536000 seconds)
+- **method :** Name of the method to call.
+- **classId (optional) :** Name of class. If not given, same classId will be used making this request.
+- **instanceId (optional) :** Instance id for a class. If not given request will be sent to the same instance making this request.
+- **payload (optional) :** A payload to send to triggered method. It will be delivered in data.request.body field.
+
+> You cannot trigger more than 250 tasks in a single call. Total payload cannot be larger than 250KB.
 
 ---
 
@@ -593,53 +542,6 @@ URL: <https://{ALIAS}.api.retter.io/{PROJECT_ID}}/INSTANCE/{CLASS_NAME}>
 URL: <https://{ALIAS}.api.retter.io/{PROJECT_ID}/CALL/{CLASS_NAME}/{METHOD_NAME}/{INSTANCE_ID}>
 
 You can send GET, POST, PUT, PATCH, DELETE, etc. requests to these url's.
-
----
-
-## Tasks
-
-Sometimes you may want to make another method request but don't need back an immediate response.
-Let's say you have created an order and you would like to send it to Reporting class.
-You can trigger a method call by setting data.tasks property.
-
-data.tasks property is an array of Task items which looks like this:
-
-```typescript
-export interface Task {
-    classId?: string;
-    instanceId?: string;
-    lookupKey?: { name: string; value: string };
-    payload?: any;
-    method: string;
-    after: number;
-}
-```
-
-Below example triggers two different methods, one for the same instance another one to another class' instance.
-
-```typescript
-data.tasks = [
-    {
-        after: 5,
-        method: "someMethod"
-    },
-    {
-        after: 0,
-        method: "someOtherMethodOnAnotherClass",
-        classId: "OtherClass",
-        instanceId: "other-instance-id",
-        payload: { foo: 'bar' }
-    }
-]
-```
-
-- **after :** Defined in seconds. You can define a delay for all kinds of methods. This means execute the method after the provided amount of seconds delay. We currently support delays up to 1 year. (31536000 seconds)
-- **method :** Name of the method to call.
-- **classId (optional) :** Name of class. If not given, same classId will be used making this request.
-- **instanceId (optional) :** Instance id for a class. If not given request will be sent to the same instance making this request.
-- **payload (optional) :** A payload to send to triggered method. It will be delivered in data.request.body field.
-
-> You cannot trigger more than 250 tasks in a single call. Total payload cannot be larger than 250KB.
 
 ---
 
