@@ -25,8 +25,7 @@ You can store JSON serializable data in your state by 4 different access level: 
 - Private state is available for your methods only.
 
 > A state of a single instance cannot be larger than 5 MB.
-> If your class works in accelerated mode, the limit is 100 KB.
-
+> If your class works in accelerated mode, the limit is 250 KB after compression.
 
 ### What Do You Do With State?
 
@@ -57,4 +56,3 @@ export async function getState(data: Data): Promise<Response> {
 
 Actually any method can be used to returning part of or full state to any caller. getState is a special method used in developer console.
 Other than that you can write another method and use it from your clients.
-
