@@ -3,7 +3,30 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
-## v2
+## v2.0.3
+
+- Added support for environment variables in Destinations and Logs.
+- Added support for VTL (Velocity Template Language) in Destinations and Logs.
+- The HttpRequest operation now supports static methods as callbacks.
+- Restricted WRITE method calls to the same instance with RDK.
+
+## v2.0.2
+
+- Introduced log masks for enhanced logging control.
+- Improved error handling for better reliability.
+- Removed the 4KB limit on environment variables.
+- Disabled traffic to deactive projects.
+
+## v2.0.1
+
+- Introduced the new /TOKEN API for enhanced authentication.
+- Optimized model usage with zero runtime latency.
+- Introduced Project deployment instead of Class deployment.
+- Enhanced security at the root project.
+- Deprecated sorted sets.
+- Improved cost efficiency measures.
+
+## v2.0.0
 
 - Removed `data.context.action` from the `data` object.
 - Moved `data.context.pathParameters` to `data.request.pathParameters`.
