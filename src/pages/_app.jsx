@@ -29,7 +29,6 @@ const navigation = [
       { title: 'Limits', href: '/docs/project-settings/limits' },
       { title: 'Members', href: '/docs/project-settings/members' },
       { title: 'Logs', href: '/docs/project-settings/logs' },
-      { title: 'Instances', href: '/docs/project-settings/instances' },
       { title: 'Destinations', href: '/docs/project-settings/destinations' },
       { title: 'Authentication Rules', href: '/docs/project-settings/authentication-rules' },
       { title: 'Environments', href: '/docs/project-settings/environments' },
