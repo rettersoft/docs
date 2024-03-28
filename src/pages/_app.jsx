@@ -12,39 +12,50 @@ const navigation = [
     links: [
       { title: 'Getting started', href: '/' },
       { title: 'Create a Simple Project', href: '/docs/create-a-simple-project' },
-      { title: 'Samples', href: '/docs/samples' },
+      { title: 'FAQ', href: '/docs/faq' },
     ],
   },
   {
-    title: 'Project Components',
+    title: 'Components',
     links: [
-      { title: 'Classes', href: '/docs/project-components/classes' },
-      { title: 'Dependencies', href: '/docs/project-components/dependencies' },
-      { title: 'Models', href: '/docs/project-components/models' },
+      { title: 'Projects', href: '/docs/components/projects' },
+      { title: 'Classes', href: '/docs/components/classes' },
+      { title: 'Dependencies', href: '/docs/components/dependencies' },
+      { title: 'Models', href: '/docs/components/models' },
     ],
   },
   {
-    title: 'Project Settings',
+    title: 'Settings',
     links: [
-      { title: 'Limits', href: '/docs/project-settings/limits' },
-      { title: 'Members', href: '/docs/project-settings/members' },
-      { title: 'Logs', href: '/docs/project-settings/logs' },
-      { title: 'Destinations', href: '/docs/project-settings/destinations' },
-      { title: 'Authentication Rules', href: '/docs/project-settings/authentication-rules' },
-      { title: 'Environments', href: '/docs/project-settings/environments' },
+      { title: 'Members', href: '/docs/settings/members' },
+      { title: 'Logs', href: '/docs/settings/logs' },
+      { title: 'Destinations', href: '/docs/settings/destinations' },
+      { title: 'Authentication Rules', href: '/docs/settings/authentication-rules' },
+      { title: 'Environments', href: '/docs/settings/environments' },
+      { title: 'Quotas', href: '/docs/settings/quotas' },
     ],
   },
   {
     title: 'CLI',
     links: [
-      { title: 'Secrets', href: '/docs/cli/secrets' },
-      { title: 'Commands', href: '/docs/rdk/commands' },
+      { title: 'Getting Started', href: '/docs/cli/start' },
+      { title: 'Commands', href: '/docs/cli/commands' },
     ],
   },
   {
     title: 'RDK',
     links: [
       { title: 'Operations', href: '/docs/rdk/operations' },
+      { title: 'Authentication', href: '/docs/rdk/authentication' },
+      { title: 'Database', href: '/docs/rdk/database' },
+      { title: 'Lookup Keys', href: '/docs/rdk/lookup-keys' },
+      { title: 'Storage', href: '/docs/rdk/storage' },
+      { title: 'Memory', href: '/docs/rdk/memory' },
+      { title: 'Static IP', href: '/docs/rdk/static-ip-calls' },
+      { title: 'Deployment', href: '/docs/rdk/deployment' },
+      { title: 'Cache', href: '/docs/rdk/caching' },
+      { title: 'Clean Up', href: '/docs/rdk/delete' },
+      { title: 'Bulk Operations', href: '/docs/rdk/bulk' },
     ],
   },
   {
@@ -57,9 +68,15 @@ const navigation = [
     ],
   },
   {
+    title: 'Samples',
+    links: [
+        { title: 'Email / Password Auth', href: '/docs/samples/email-password-auth' },
+    ],
+  },
+  {
     title: 'Change Log',
     links: [
-        { title: 'Versions', href: '/docs/change-log/versions' },
+        { title: 'Versions', href: '/docs/change-logs' },
     ],
   },
 ]
