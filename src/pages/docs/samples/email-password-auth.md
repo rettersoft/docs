@@ -15,7 +15,7 @@ rio init UserAuthSample
 
 Rio cli creates a project with following structure:
 
-![Images](/samples/email-password-auth/folder-1.png)
+![Folder Structure](/samples/email-password-auth/folder-1.png)
 
 ## User class
 
@@ -475,4 +475,3 @@ This is a very simple example of a user authentication with a single class. You 
 - storing a counter on the user instance to store how many password attempts have been made in a period of time
 
 Thanks for reading.
-

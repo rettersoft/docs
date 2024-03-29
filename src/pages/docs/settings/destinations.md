@@ -40,7 +40,7 @@ destinations:
 | ------------- | ------------------- | ------------------- | ------------------- |
 | id            | string              | true                | Destination's unique ID |
 
-## API Reference
+### API Reference
 
 | Parameter         | Type                                    | Required            | Description         |
 | ----------------- | --------------------------------------- | ------------------- | ------------------- |
@@ -50,7 +50,7 @@ destinations:
 | retryConfig.delay | number                                  | false               | delay multiplexer after a failed execution |
 | retryConfig.count | number                                  | false               | maximum retry count after a failed execution |
 
-### Concurrency
+#### Concurrency
 
 By default, destinations have instanceId based concurrency which means each instanceId has its own queue to push messages in order.
 These messages will be delivered in parallel by number of active instanceIds.
@@ -58,7 +58,7 @@ These messages will be delivered in parallel by number of active instanceIds.
 If you want to manage concurrency you should provide a parallelization factor in your destination configuration.
 When you set an integer greater than zero, core will limit concurrent threads to that value instead of number of active instanceIds.
 
-### Elasticsearch Support
+#### Elasticsearch Support
 
 | Parameter         | Type                                    | Required            | Description         |
 | ----------------- | --------------------------------------- | ------------------- | ------------------- |
@@ -67,7 +67,7 @@ When you set an integer greater than zero, core will limit concurrent threads to
 | password          | string                                  | true                | Elasti.co's password |
 | index             | string                                  | true                | Index name to push the data into |
 
-### Http Support
+#### Http Support
 
 | Parameter             | Type                                    | Required            | Description         |
 | --------------------- | --------------------------------------- | ------------------- | ------------------- |
@@ -75,7 +75,7 @@ When you set an integer greater than zero, core will limit concurrent threads to
 | url                   | string                                  | true                | Request url |
 | headers.<header_name> | string                                  | false               | Request header's name and value |
 
-### Dynamic Parameters In Destination Configuration
+#### Dynamic Parameters In Destination Configuration
 
 Destinations support VTL templates to allow you provide dynamic values in configuration.
 There are 3 different resources for accessing dynamic values: context, environment variables and state.
@@ -84,3 +84,16 @@ You can access context and state via *$data* parameter while accessing environme
 ```text
 http://mydomain.com/$data.context.instanceId/$data.state.private.valueFromPrivateState/$env.ENV_VAR
 ```
+
+## Scan Jobs
+
+You can scan and send instances to your destinations any time you want.
+All you have to do is to add a new scan job by selecting the class and destinations that you want to send instances to.
+Once the job started, it will be updated in realtime as long as it runs in background.
+
+### API Reference
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| classId       | string              | true                | Class ID to scan the instances |
+| destinations  | string[]            | true                | Destinations to send the instances |
