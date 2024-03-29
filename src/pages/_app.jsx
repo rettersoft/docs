@@ -8,10 +8,10 @@ import '@/styles/tailwind.css'
 
 const navigation = [
   {
-    title: 'Introduction',
+    title: 'Retter.io',
     links: [
-      { title: 'Getting started', href: '/' },
-      { title: 'Create a Simple Project', href: '/docs/create-a-simple-project' },
+      { title: 'What is Retter.io?', href: '/' },
+      { title: 'Create Your First Project', href: '/docs/first-project' },
       { title: 'FAQ', href: '/docs/faq' },
     ],
   },

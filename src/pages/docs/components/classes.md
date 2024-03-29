@@ -114,8 +114,8 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 ## Instances
 
 Except for static methods, everything else in a Rio class is instance-based.
-When creating a new instance INIT delegate method is called. Check init documentation [here](/docs/classes/delegate-methods#init).
-Lifecycle of an instance is documented [here](/docs/classes/lifecycle).
+When creating a new instance INIT delegate method is called.
+Lifecycle of an instance is documented [here](/docs/components/classes#lifecycle-of-delegate-methods).
 
 ### States
 
@@ -437,11 +437,11 @@ When getting an instance, authorizer is called with data.context.methodName = 'G
 
 #### init
 
-It should initialize and make some configurations for the new instance. This method is called only once for the same instanceId. If you return same ID from getInstanceId then this method is not called the second time. [Click for more details.](/docs/classes/delegate-methods#init)
+It should initialize and make some configurations for the new instance. This method is called only once for the same instanceId. If you return same ID from getInstanceId then this method is not called the second time.
 
 #### destroy
 
-Upon deletion of an instance "destroy" delegate method is called. You can do final cleanup here. This method can prevent instance deletion by returning a status code other than 200. [Click for more details.](/docs/classes/delegate-methods#init)
+Upon deletion of an instance "destroy" delegate method is called. You can do final cleanup here. This method can prevent instance deletion by returning a status code other than 200.
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Commands
-description: You can run "rio -h" to see the list of all available commands.
+description: You can run "rio --help" to see the list of all available commands.
 ---
 
-You can run "rio -h" to see the list of all available commands.
+You can run "rio --help" to see the list of all available commands.
 
 * `--help`: Show help.
 * `--version`: Show version number.
@@ -14,7 +14,9 @@ You can run "rio -h" to see the list of all available commands.
 
 If we had successfully setup our profile in, we could initialize our project with decided PROJECT_ALIAS.
 
-> rio init PROJECT_ALIAS
+```bash
+rio init PROJECT_ALIAS
+```
 
 After this command you will have a working project in your system.
 You can check it by revisiting Projects page at <https://c.retter.io>.
@@ -35,8 +37,12 @@ Save local changes to the rio cloud without deploying them
 * `--ignore-approval [i]`: Ignore deployment manual approval (optional).
 * `--skip-diff-check [s]`: Skip and don't perform difference checks while deploying (optional).
 
-```shell
-rio save --profile admin --project-id 77bb3924k --classes Order Product --skip-diff-check --ignore-approval
+```bash
+rio save --profile admin --project-id 77bb3924k \
+    --classes Order Product \
+    --skip-diff-check \
+    --ignore-approval
+
 rio s --p admin --pid 77bb3924k --c Order Product --s --i
 ```
 
@@ -56,8 +62,13 @@ Save local changes to the rio cloud and deploy the project.
 * `--force [f]`: Send deployment requests with force parameter to RIO (optional).
 * `--skip-diff-check [s]`: Skip and don't perform difference checks while deploying (optional).
 
-```shell
-rio deploy --profile admin --project-id 77bb3924k --classes Order Product --force --skip-diff-check --ignore-approval
+```bash
+rio deploy --profile admin --project-id 77bb3924k \
+    --classes Order Product \
+    --force \
+    --skip-diff-check \
+    --ignore-approval
+
 rio d --p admin --pid 77bb3924k --c Order Product --f --s --i
 ```
 
@@ -73,8 +84,9 @@ Fetches project data and generates a project configuration file on your local di
 * `--profile [p]`: Profile name for target rio environment (type: string)
 * `--project-id [pid]`: Project id for target project (type: string).
 
-```shell
+```bash
 rio get-settings --profile <profile_name> --project-id <project_id>
+
 rio gs --p <profile_name> --pid <project_id>
 ```
 
@@ -90,7 +102,8 @@ Synchronize your local project configuration with the remote project, enabling y
 * `--profile [p]`: Profile name for target rio environment (type: string)
 * `--project-id [pid]`: Project id for target project (type: string).
 
-```shell
+```bash
 rio set-settings --profile <profile_name> --project-id <project_id>
+
 rio ss --p <profile_name> --pid <project_id>
 ```

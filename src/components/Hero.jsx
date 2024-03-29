@@ -44,10 +44,10 @@ export function Hero() {
               Designed to empower enterprises and developers to develop faster and build better, Retter.io abstracts cloud provider complexity.
               </p>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
-                <ButtonLink href="/">Get started</ButtonLink>
-                <ButtonLink href="/" variant="secondary">
+                <ButtonLink href="/docs/first-project">Get started</ButtonLink>
+                {/* <ButtonLink href="/" variant="secondary">
                   View on GitHub
-                </ButtonLink>
+                </ButtonLink> */}
               </div>
             </div>
           </div>

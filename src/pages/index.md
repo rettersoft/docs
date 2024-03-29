@@ -1,7 +1,6 @@
 ---
-title: Getting Started
-pageTitle: Retter.io - Faster Backend Development
-description: Enabling developers to write backend apps with Retter.io
+title: What is Retter.io?
+description: Retter.io *(Rio)* is an abstraction layer on top of cloud infrastructure.
 ---
 
 Retter.io *(Rio)* is an abstraction layer on top of cloud infrastructure.

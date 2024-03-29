@@ -14,14 +14,17 @@ If you get "The operation was rejected by your operating system." error in this 
 
 ## Setting Up Your Profile With CLI
 
-After CLI setup is complete, we can set your profile up. You can visit "https://c.retter.io" and login.
-Than open settings *Rbs Console* > *Right Top Dropdown Menu* > *Settings*.
+After CLI setup is complete, we can set your profile up. You can visit your developer console and login.
+Than open settings *Rio Console* > *Right Top Dropdown Menu* > *Settings*.
 You will see your *SECRET_ID* and *SECRET_KEY* in here.
 
 Decide your *PROFILE_NAME* and run the following command with your own *PROFILE_NAME*, *SECRET_ID* and *SECRET_KEY*.
 
-```shell
-rio set-profile --profile-name <PROFILE_NAME> --secret-id <SECRET> --secret-key <SECRETKEY> --endpoint <DOMAIN>
+```bash
+rio set-profile --profile-name <PROFILE_NAME> \
+    --secret-id <SECRET> \
+    --secret-key <SECRETKEY> \
+    --endpoint <DOMAIN>
 ```
 
 ### Arguments
