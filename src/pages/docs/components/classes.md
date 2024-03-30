@@ -5,7 +5,17 @@ description: Classes are basic building blocks in Rio.
 
 Classes are basic building blocks in Rio.
 Each instance of a class represents a data state and set of methods associated with it.
-You define classes in a file called template.yml.
+Classes might have multiple instances as well as they have only one instance just like a singleton class in object oriented programming.
+
+Write concurrency of each instance is 1. If an instance busy, rio will let the client know, so they can retry the request.
+Our SDKs handle this retry procedures automatically.
+
+> Asynchronous writes go through a FIFO queue under the hood.
+If a class designed to consume asynchronous writes really slow and there are more than 20K messages in the queue, that will start to affect each instance of the class.
+To prevent that kind of heavy traffic on a single class that makes the instances block each other, the state must be separated into multiple classes.
+On the other hand, that might be convenient for singleton classes wih eventually consistent states.
+
+You define classes in a file called *template.yml*.
 Below is a sample template file defining a Rio class:
 
 ```typescript
