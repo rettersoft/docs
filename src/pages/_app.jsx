@@ -71,6 +71,8 @@ const navigation = [
     title: 'Samples',
     links: [
         { title: 'Email / Password Auth', href: '/docs/samples/email-password-auth' },
+        { title: 'Articles', href: 'https://dev.to/retterio' },
+        { title: 'More', href: 'https://github.com/retterio' },
     ],
   },
   {
