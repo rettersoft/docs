@@ -7,7 +7,7 @@ Models are backbone of Rio's validation mechanism.
 You can assign models to methods in order to validate before your method call.
 Thus, your code will be more readable and less error prone. We strictly suggests schemas written with JSON Schema (Draft-07).
 
-> Rio doesn't support references in models for now.
+> Rio doesn't support references in models.
 
 ```json
 models/Person.json
@@ -171,24 +171,84 @@ methods:
       handler: index.createTodo
 ```
 
-## Using the Created Models
+## Validation
 
-After we add the models to our method, we can use autocomplete to use our models in our method.
+Rio has an optional built-in validation with JSON schema models.
+After adding a valid JSON schema into models, you assign them to your methods as input, output, query string or error model.
+Rio will evaluate the data with your model and inform the client accordingly.
 
-```typescript
-// index.ts
-import { CreateTodoInput, CreateTodoOutput } from './rio'
+Let's say we have a model called SayHelloInput
 
-export async function createTodo(data: Data<CreateTodoInput, CreateTodoOutput>): Promise<Data> {
-    const { task } = data.request.body // autocompleted
-
-    data.response = {
-        statusCode: 200,
-        body: {
-            task, // autocompleted
-        }
+```json
+{
+  "type": "object",
+  "required": [
+    "firstName"
+  ],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0
     }
+  }
+}
+```
 
-    return data
+### Post Body Validation
+
+To validate a post body you need to define validation in inputModel field like this:
+
+```yaml
+init: index.init
+getState: index.getState
+methods:
+  - method: sayHello
+    inputModel: SayHelloInput
+    tag: test
+    handler: index.sayHello
+```
+
+### Query String Validation
+
+To validate data sent in querystrings you need to define validation in queryStringModel field like this:
+
+```yaml
+init: index.init
+getState: index.getState
+methods:
+  - method: sayHello
+    queryStringModel: SayHelloInput
+    tag: test
+    handler: index.sayHello
+```
+
+### Error Validations
+
+Rio uses AJV for model validation. If a validation fails Rio returnes a response with status code: 400.
+
+```json
+{
+  "code": "VALIDATION",
+  "message": "Model validation has been failed.",
+  "issues": [
+    {
+      "instancePath": "",
+      "schemaPath": "#/required",
+      "keyword": "required",
+      "params": {
+        "missingProperty": "firstName"
+      },
+      "message": "must have required property 'firstName'"
+    }
+  ]
 }
 ```

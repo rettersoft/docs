@@ -5,6 +5,8 @@ description: Authentication Rules provide a way to extend your authentication sy
 
 Authentication Rules are a feature in our website's authentication system that allow you to define custom rules to determine the identity and authorization of users. These rules are evaluated during the authentication process and can be used to set the identity, claims, and userId for a given request. By leveraging input data such as context, headers, and query string parameters, you can create flexible and dynamic authentication rules tailored to your specific requirements.
 
+---
+
 ## Rule Structure
 
 An authentication rule consists of two main components: a filter and an output.
@@ -63,7 +65,6 @@ In this example, the filter checks the value of the `APIKEY` property in the `he
 
 Here's an example of an authentication rule that sets the identity to "admin" when the API key in the query string parameters is equal to "apikey123":
 
-
 ```json
 {
     "filter": {
@@ -79,11 +80,9 @@ Here's an example of an authentication rule that sets the identity to "admin" wh
 
 In this example, the filter checks the value of the `APIKEY` property in the `queryStringParams` object. If it matches the specified API key, the output sets the identity to "admin". You can customize this rule by modifying the filter conditions, such as using different comparison operators or evaluating other properties in the input data.
 
-
 ## Usage Example 4
 
 Here's an example of an authentication rule that sets the identity to "admin" and the userId to "SAP" when both the API key in the header and the API key in the query string parameters are equal to "apikey123":
-
 
 ```json
 {

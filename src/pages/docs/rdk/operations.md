@@ -1,9 +1,11 @@
 ---
-title: RDK
-description: RDK is the API layer of Rio operations.
+title: Operations
+description: Operations are built-in services available via our API called RDK.
 ---
 
-RDK is the API layer of Rio operations.
+Operations are built-in services available via our API called RDK.
+
+> RDK is the API layer of Rio operations.
 
 ```typescript
 import RDK from '@retter/rdk'
@@ -24,3 +26,15 @@ await rdk.pipeline()
     .addToSortedSet({ setName: 'my-set', sortKey: 'my-sort-key', data: { key: 'value' } })
     .send()
 ```
+
+There are lots of operations which you can easily use via RDK.
+
+- Authentication
+- Lookup Keys
+- Database
+- Memory
+- Sorted Set
+- File Storage
+- Static IP Calls
+- Deployment
+- Caching

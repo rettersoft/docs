@@ -3,28 +3,157 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v2.0.34
+
+- Asynchronous READ and STATIC method types added to support long running read only methods.
+- Suffix added to requestId for queued write methods for resolving the conflict between log records.
+
+## v2.0.33
+
+- Accelerated state management fixed.
+
+> **You must migrate to the new Rio Administrator Console to manage deployments from now on.**
+
+## v2.0.32
+
+- Custom prefix support added to project id on rio api.
+
+## v2.0.31
+
+- All related event rules deleted when a class deleted.
+- Token expiration days became manageable via environment variables.
+- Validation support added to models during deployment.
+
+## v2.0.28
+
+- Garbage collector added to the deployment farm for preventing the nodes from filling up all the storage.
+- Deploying a single class deprecated.
+- Captcha support added to developer console.
+
+## v2.0.27
+
+- Deployment farm added for faster deployments with caching supports for NPM and Docker.
+
+## v2.0.26
+
+- Infrequent access log group support added.
+- Log retention enabled for all log groups.
+
+## v2.0.25
+
+- Lock ownership improved for queued write methods to explain the identity of current lock owner.
+- AWS SDK version upgraded.
+
+## v2.0.24
+
+- Caching enabled for OPTIONS requests.
+
+## v2.0.23
+
+- Invitation to developer console fixed.
+- AWS SDK versions upgraded.
+- Logs moved to Firehose.
+
+## v2.0.21
+
+- Signed Url support added to File Storage operations.
+- Size limit applied to payload for the log adapters: 1 MB.
+
+## v2.0.20
+
+- On purpose delay support added for initiating a new instance from a class.
+
+## v2.0.18
+
+- Lock mechanism improved for stable concurrency management.
+- *x-srv-time* header added to all responses.
+- An environment variable added to support logs on authentication api.
+- An environment variable added to manage max age for token verification.
+
+## v2.0.16
+
+- Old Memory operations deprecated. Instead, use global memory or database operations with memory:true flag.
+- Concurrency breach error fixed.
+- Quota and usage presentations improved on developer console.
+
+> **You must run OldMemoryToDatabaseMigration before switching to v2.0.7.**
+
+## v2.0.14
+
+- Batch processing support added to queue handlers.
+- Obfuscation support added to deployment.
+- Typescript support added to dependencies.
+
+## v2.0.13
+
+- Quota management and tracking support added.
+- Removing a database partition operation added.
+- Metadata support added to file storage operations.
+- Logs simplified for core implementations.
+
+## v2.0.11
+
+- Versioning support added to the states.
+
+## v2.0.10
+
+- Migration tool added for version update: v1 -> v2.
+- Dark mode support added for developer console.
+- State update via developer console support added.
+- Kinesis support added to log adapters.
+
+## v2.0.8
+
+- Default project template updated.
+- Validation support added to the environment variables of the projects.
+- Headers support added to filters on authentication rules.
+
+## v2.0.7
+
+- Support added for long running queued write methods.
+- Authentication rules support added.
+- Validation applied to all class templates during project deployment.
+
+> **You must run LongRunningUpdater before switching to v2.0.7.**
+
+## v2.0.6
+
+- console logs separated by delegate methods.
+- various improvements on console.
+
+## v2.0.5
+
+- Increment database operation added.
+- Deleting itself prevented from a write method.
+- ECR clean up added.
+- Keyboard shortcuts added for saving and deploying on developer console.
+- Current Rio version added to developer console.
+
+## v2.0.4
+
+- classId scope added to lookup keys.
+- RDK response types improved with operation-specific models.
+- Lookup key support added to task scheduling.
+- Queued Write method response status change to 570 from 575.
+
 ## v2.0.3
 
-- Added support for environment variables in Destinations and Logs.
-- Added support for VTL (Velocity Template Language) in Destinations and Logs.
-- The HttpRequest operation now supports static methods as callbacks.
-- Restricted WRITE method calls to the same instance with RDK.
+- Prevented direct RDK write calls to the same instance.
+- Static method support added to RDK.httpRequest callback handlers.
+- Environment support added to destination and log configurations.
 
 ## v2.0.2
 
-- Introduced log masks for enhanced logging control.
-- Improved error handling for better reliability.
-- Removed the 4KB limit on environment variables.
-- Disabled traffic to deactive projects.
+- CDK version upgraded in core stack.
+- Error management improved to provide better explanation on errors.
+- Masking applied to log records by a configuration template.
 
 ## v2.0.1
 
-- Introduced the new /TOKEN API for enhanced authentication.
-- Optimized model usage with zero runtime latency.
-- Introduced Project deployment instead of Class deployment.
-- Enhanced security at the root project.
-- Deprecated sorted sets.
-- Improved cost efficiency measures.
+- **Sorted Set** operations deprecated. Use *Database* operations instead.
+- Security improved on underlying root project.
+- Token API separated from core.
+- Model deployment improved for faster access in runtime.
 
 ## v2.0.0
 

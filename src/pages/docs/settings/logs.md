@@ -1,25 +1,11 @@
 ---
-title: Settings
-description: All configuration available in project scope can be found under Settings tab.
+title: Logs
+description: Every call made to the classes in your project will show up in logs.
 ---
 
-All configuration available in project scope can be found under Settings tab.
-You can change project's name in **Config** tab.
-Additionally, you can deactive project by clicking the red button in **Danger Zone**.
+Every call made to the classes in your project will show up in logs.
 
 ---
-
-## Secrets
-
-There are three secret keys in Rio: access, refresh and custom secret keys.
-Rio core uses these secret keys to generate access, refresh and custom tokens.
-If you regenerate any of these keys, existing tokens will become invalid immediately.
-
-## Environments
-
-You can define environment variables as a JSON document here.
-They will be available in your methods through your programming language's default environment support.
-For example, in nodejs, you can access them via *process.env*
 
 ## Log Adapters
 
@@ -63,11 +49,21 @@ You can access context and state via *$data* parameter while accessing environme
 http://mydomain.com/$data.context.instanceId/$data.state.private.valueFromPrivateState/$env.ENV_VAR
 ```
 
-## Tracing Adapters
+## Log Masking
 
-In Rio, you can enable tracing mode for your project.
-In tracing mode, all of your API calls will be pushed to XRAY for detailed analysis.
+You can exclude your sensitive data from log records by simply masking them out in your class templates.
+You can target only request and response objects in your method's payload.
 
-| Parameter     | Type                | Required            | Description         |
-| ------------- | ------------------- | ------------------- | ------------------- |
-| type          | string (XRAY)       | true                | Tracing service.    |
+Please see usage of logMasks parameter below.
+
+```yaml
+init: index.init
+methods:
+  - method: hello
+    handler: index.hello
+logMasks:
+  - path: "request.headers.api_key"
+  - path: "request.body.password"
+  - path: "response.headers.next_token"
+  - path: "response.body.msisdn"
+```

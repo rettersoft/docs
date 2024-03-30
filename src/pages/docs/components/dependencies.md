@@ -3,11 +3,11 @@ title: Dependencies
 description: Dependencies provide a way to extend your default dependencies with your own custom codes.
 ---
 
-Beside frameworks' dependencies (*npm*, *pypi*), there are also dependencies that are not part of the framework itself.
+Beside frameworks' dependencies (*npm*), there are also dependencies that are not part of the framework itself.
 At this point, Rio supports custom build dependencies.
-You can add your custom build dependencies to your class's template file in order to use across classes.
+You can add your custom build dependencies to your class' template file in order to use across classes.
 
-> For now, we only support custom build dependencies for NodeJS (Javascript) projects.
+> Rio support dependencies in Typescript as well as it supports Javascript dependencies.
 
 There are two types of dependencies:
 
@@ -34,7 +34,7 @@ module.exports = {
 }
 ```
 
-In order to use dependency, you need to import it in your class' template file. 
+In order to use dependency, you need to import it in your class' template file.
 
 > You can add up to 5 dependencies to your classes.
 
@@ -86,7 +86,7 @@ export async function generateCloudDependency(data: Data): Promise<Data> {
 }
 ```
 
-You can use multi-dependency in your class
+You can use multiple dependencies in your class
 
 ```yaml
 classes/Order/template.yml
