@@ -25,6 +25,7 @@ interface IncrementDatabase {
     path?: string
     value: number
     memory?: boolean
+    expireAt?: number,
 }
 
 interface ReadDatabase {

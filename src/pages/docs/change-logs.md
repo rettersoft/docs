@@ -3,10 +3,20 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v2.0.35
+
+- Routerless 👑 project support added.
+- Method call retry configuration fixed.
+- TTL support added to increment database operation on RDK (v2.0.12 released)
+
+> **Available only via the new Rio Administrator Console.**
+
 ## v2.0.34
 
 - Asynchronous READ and STATIC method types added to support long running read only methods.
 - Suffix added to requestId for queued write methods for resolving the conflict between log records.
+
+> **Available only via the new Rio Administrator Console.**
 
 ## v2.0.33
 
