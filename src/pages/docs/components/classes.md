@@ -255,10 +255,20 @@ In the example above, cronA is called every 30 minutes and cronB is called every
 
 > For more details about crons please visit <https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html>
 
+#### ASYNC_STATIC
+
+Async STATIC methods are the longer running versions of the regular STATIC methods.
+They run in the background and it's possible to execute them for 890 seconds.
+
 #### READ
 
 Read methods should be called in instance scope.
 They get the current value of the state but they cannot write anything.
+
+#### ASYNC_READ
+
+Async READ methods are the longer running versions of the regular READ methods.
+They run in the background and it's possible to execute them for 890 seconds.
 
 #### WRITE
 
@@ -277,8 +287,6 @@ They are based on a FIFO queue, so concurrency management handled automatically.
 
 If there is a new WRITE method while a queued write method is still on progress, Rio opens a few seconds gap right after queued write method completed.
 Thus, next WRITE method is able to execute, even if there are lots of pending requests in FIFO queue.
-
-<!-- TODO add async types -->
 
 ---
 
