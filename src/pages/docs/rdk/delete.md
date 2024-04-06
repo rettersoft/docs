@@ -5,8 +5,10 @@ description: You can delete your classes and instances via RDK.
 
 You can delete your classes and instances via RDK.
 
-> You cannot delete more than 10 classes in parallel.
-> You cannot delete more than 10 instances in parallel.
+- You cannot delete more than 10 classes in parallel.
+- You cannot delete more than 10 instances in parallel.
+
+> Write methods cannot delete their own instances.
 
 ```typescript
 interface DeleteClass {

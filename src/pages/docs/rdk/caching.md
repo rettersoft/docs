@@ -5,7 +5,7 @@ description: You can invalidate your cached responses via RDK.
 
 You can invalidate your cached responses via RDK.
 
-> You cannot invalidate more than 5 cached responses in parralel
+- You cannot invalidate more than 5 cached responses in parralel
 
 ```typescript
 interface InvalidateCache {

@@ -5,7 +5,7 @@ description: You can generate custom tokens via RDK.
 
 You can generate custom tokens via RDK.
 
-> You cannot generate more than 10 custom tokens in parallel.
+- You cannot generate more than 10 custom tokens in parallel.
 
 ```typescript
 interface GenerateCustomToken {

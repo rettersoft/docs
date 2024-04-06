@@ -5,7 +5,7 @@ description: You can deploy your classes via RDK.
 
 You can deploy your classes via RDK.
 
-> You cannot deploy more than 5 classes in parallel.
+- You cannot deploy more than 5 classes in parallel.
 
 ```typescript
 interface DeployClass {

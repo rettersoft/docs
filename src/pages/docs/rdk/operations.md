@@ -5,7 +5,7 @@ description: Operations are built-in services available via our API called RDK.
 
 Operations are built-in services available via our API called RDK.
 
-> RDK is the API layer of Rio operations.
+- RDK is the API layer of Rio operations.
 
 ```typescript
 import RDK from '@retter/rdk'

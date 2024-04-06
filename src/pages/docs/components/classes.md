@@ -268,7 +268,7 @@ They get the current value of the state but they cannot write anything.
 #### ASYNC_READ
 
 Async READ methods are the longer running versions of the regular READ methods.
-They run in the background and it's possible to execute them for 890 seconds.
+Just like the static ASYNC methods, they also run in the background and it's possible to execute them for 890 seconds.
 
 #### WRITE
 
@@ -505,48 +505,7 @@ await cloudObject.call({
 
 You can call methods from your classes and create new instances from your classes via RDK.
 
-```typescript
-import RDK from '@retter/rdk'
-
-const rdk = new RDK()
-
-await rdk.getInstance({ classId: 'MyClass', body: {} })
-await rdk.getInstance({ classId: 'MyClass', instanceId: 'myInstanceId' })
-await rdk.methodCall({ classId: 'MyClass', instanceId: 'myInstanceId', methodName: 'myMethod' })
-
-await rdk.pipeline()
-    .getInstance({ classId: 'MyClass', body: {} })
-    .getInstance({ classId: 'MyClass', instanceId: 'myInstanceId' })
-    .methodCall({ classId: 'MyClass', instanceId: 'myInstanceId', methodName: 'myMethod' })
-    .send()
-```
-
-#### Get / Init Instances Reference
-
-| Parameter         | Type                | Required            | Description         |
-| ----------------- | ------------------- | ------------------- | ------------------- |
-| httpMethod        | string              | false               | HTTP method |
-| queryStringParams | Record<string, any> | false               | Query string parameters |
-| headers           | Record<string, any> | false               | Headers |
-| body              | any                 | false               | Request body |
-| classId           | string              | true                | Class ID |
-| instanceId        | string              | false               | Instance ID |
-| lookupKey         | { name: string;  value: string } | false  | Look up key for determining instance ID |
-| retryConfig       | { delay: number;  count: number;  rate: number } | false | Retry configuration |
-
-#### Call Methods Reference
-
-| Parameter         | Type                | Required            | Description         |
-| ----------------- | ------------------- | ------------------- | ------------------- |
-| httpMethod        | string              | false               | HTTP method |
-| queryStringParams | Record<string, any> | false               | Query string parameters |
-| headers           | Record<string, any> | false               | Headers |
-| body              | any                 | false               | Request body |
-| classId           | string              | true                | Class ID |
-| instanceId        | string              | false               | Instance ID |
-| lookupKey         | { name: string;  value: string } | false  | Look up key for determining instance ID |
-| methodName        | string              | true                | Method name |
-| retryConfig       | { delay: number;  count: number;  rate: number } | false | Retry configuration |
+*For more information about interacting with instances, please check [Method Calls](/docs/rdk/instances) section at the RDK page*.
 
 #### Rest Endpoint
 

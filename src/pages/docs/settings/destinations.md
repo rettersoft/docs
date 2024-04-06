@@ -47,7 +47,7 @@ destinations:
 | id                | string                                  | true                | Destination's unique ID |
 | type              | string (Elasticsearch, Firestore, Http) | true                | Destination's type |
 | pfactor           | number                                  | false               | Parallelization factor. If you set this, queue will be consumed by the number you provided in parallel |
-| retryConfig.delay | number                                  | false               | delay multiplexer after a failed execution |
+| retryConfig.delay | number                                  | false               | delay multiplexer in seconds after a failed execution |
 | retryConfig.count | number                                  | false               | maximum retry count after a failed execution |
 
 #### Concurrency
