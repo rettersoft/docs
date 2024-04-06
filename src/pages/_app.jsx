@@ -47,6 +47,7 @@ const navigation = [
     links: [
       { title: 'Operations', href: '/docs/rdk/operations' },
       { title: 'Authentication', href: '/docs/rdk/authentication' },
+      { title: 'Method Call', href: '/docs/rdk/instances' },
       { title: 'Database', href: '/docs/rdk/database' },
       { title: 'Lookup Keys', href: '/docs/rdk/lookup-keys' },
       { title: 'Storage', href: '/docs/rdk/storage' },
