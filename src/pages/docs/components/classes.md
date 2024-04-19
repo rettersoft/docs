@@ -127,6 +127,8 @@ Except for static methods, everything else in a Rio class is instance-based.
 When creating a new instance INIT delegate method is called.
 Lifecycle of an instance is documented [here](/docs/components/classes#lifecycle-of-delegate-methods).
 
+> You can prevent an instance from creating by responding with a status code higher than 299 in INIT (constructor) method handler.
+
 ### States
 
 State is a basic storage unit for your instance. Every instance has a state.
@@ -204,6 +206,8 @@ Actually all WRITE and QUEUED_WRITE methods can be used to update part of or ful
 
 Methods are places that you put your business logic and implementations.
 You can as many methods as you like in your template file.
+
+> Unlike INIT method handler, your state updates would be applied even if you respond with an unsuccessful status code such as 400 or 500.
 
 ```yaml
 init: index.init
