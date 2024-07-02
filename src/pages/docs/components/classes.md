@@ -90,7 +90,7 @@ export async function updateProfile(data: Data): Promise<Data> {
 | destinations  | string[]            | false               | Custom destinations to use on state changes |
 | logMasks      | Array<{ path: string }> | false           | Log masks. Please see [Logs](https://docs.retter.io/docs/projects/logs#log-masking) section for more details. |
 | methods       | Method[]            | false               | Method definitions |
-| description   | string              | false               | Description to put into the auto-generated documentation. |
+| cors   | CORS              | false               | CORS configuration for method or class scope |
 
 ### Handler Model
 
@@ -103,6 +103,7 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 | inputModel    | string              | false               | Name of the validation model for input body |
 | outputModel   | string              | false               | Name of the validation model for output body |
 | errorModel    | string              | false               | Name of the validation model for error response |
+| cors   | CORS              | false               | CORS configuration for method scope |
 
 ### Method Model
 
@@ -118,6 +119,14 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 | handler       | string              | true                | Handler method's path. (*filename.methodName*) |
 | schedule      | string              | false               | Schedule rule. It's only available for STATIC methods. |
 | timeout       | number              | 25                  | Timeout of a method. Only QUEUED_WRITE methods support this parameter. |
+| cors   | CORS              | false               | CORS configuration for method scope |
+
+### CORS Model
+
+| Parameter     | Type                | Required            | Description         |
+| ------------- | ------------------- | ------------------- | ------------------- |
+| allowedOrigins | string[]           | true                | Allowed origins |
+| headers   | { [header: string]: string } | false               | CORS headers configuration |
 
 ---
 
@@ -550,3 +559,39 @@ methods:
 ```
 
 > Rio uses "cron and rate expressions". For more details please visit <https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html>
+
+---
+
+## CORS
+
+You can configure your CORS values via the class template.
+Definitions in the method scope overrides the values in the class scope.
+
+```yaml
+init: index.init
+get: index.get
+getState: index.getState
+authorizer: index.authorizer
+cors:
+  allowedOrigins:
+    - "*"
+  headers:
+    Access-Control-Expose-Headers: "*"
+    Access-Control-Allow-Methods: "POST, GET"
+    Access-Control-Allow-Headers: "*"
+methods:
+  - method: sayHello
+    type: WRITE
+    handler: index.sayHello
+
+  - method: sayHelloWithCustomCors
+    type: STATIC
+    handler: index.sayHelloWithCustomCors
+    cors:
+      allowedOrigins:
+        - "https://webclient.io"
+      headers:
+        Access-Control-Expose-Headers: "*"
+        Access-Control-Allow-Methods: "GET"
+        Access-Control-Allow-Headers: "*"
+```

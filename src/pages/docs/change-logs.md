@@ -11,7 +11,7 @@ description: A summary explanation about content of each version
 ## v2.1.1
 
 - started using RS256 encryption algorithm for session tokens
-- SecurityHeadersPolicy added to Cloudfront policies (optionally) 
+- SecurityHeadersPolicy added to Cloudfront policies (optionally)
 
 ## v2.1.0
 
