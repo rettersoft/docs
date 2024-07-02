@@ -3,6 +3,11 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v2.1.3
+
+- Custom token expire time became configurable
+- CORS configuration support added to class template model
+
 ## v2.1.1
 
 - started using RS256 encryption algorithm for session tokens
