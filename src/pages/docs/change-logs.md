@@ -7,6 +7,8 @@ description: A summary explanation about content of each version
 
 - Custom token expire time became configurable
 - CORS configuration support added to class template model
+- RDK v2.0.13 released
+- JS/TS SDK v0.7.2 released
 
 ## v2.1.1
 
