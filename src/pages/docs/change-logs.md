@@ -3,6 +3,21 @@ title: Change Logs
 description: A summary explanation about content of each version
 ---
 
+## v2.1.6
+
+- Base64 response support added to static ip operation request
+
+## v2.1.5
+
+- Customizable request headers support added for CDN
+- Expires At added to token responses
+- Access token termination support added for each token refresh
+
+## v2.1.4
+
+- Routerless projects improved
+- Axios config override support added to static ip operation request
+
 ## v2.1.3
 
 - Custom token expire time became configurable
