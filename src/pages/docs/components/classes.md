@@ -130,6 +130,47 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 
 ---
 
+#### CORS Example 1
+In this example, requests from any origin are allowed by setting allowedOrigins to "*". 
+
+```yaml
+  - method: generateToken
+    type: STATIC
+    handler: index.generateToken
+    cors:
+        allowedOrigins:
+          - "*"
+        headers:
+          Access-Control-Expose-Headers: "*"
+          Access-Control-Allow-Methods: "GET, POST"
+          Access-Control-Allow-Headers: "*"  
+```
+
+#### CORS Example 2
+
+This example demonstrates how to allow one or multiple specific origins to make requests. For instance, requests are allowed from either "https://riotestv2.c.retter.io" or "https://google.com".
+
+```yaml
+  - method: generateToken
+    type: STATIC
+    handler: index.generateToken
+    cors:
+        allowedOrigins:
+          - "https://riotestv2.c.retter.io"
+          - "https://google.com"
+        headers:
+          Access-Control-Expose-Headers: "*"
+          Access-Control-Allow-Methods: "GET, POST"
+          Access-Control-Allow-Headers: "*"  
+```
+
+Note:
+- CORS functionality requires RIO Version 2.1.10 or higher to work properly.
+
+- The Access-Control-Allow-Methods header is primarily used for client-side (browser) validation. The server (rio) does not enforce these checks; they are simply used to guide the browser on which methods are acceptable.
+
+- Response Behavior: When CORS is configured, if the incoming origin is allowed, the response will include that origin. If the origin is not accepted, the response will omit the Access-Control-Allow-Origin header, leaving it empty. This means the request will fail the CORS check on the client side.
+
 ## Instances
 
 Except for static methods, everything else in a Rio class is instance-based.
