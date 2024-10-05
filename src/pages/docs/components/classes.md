@@ -129,7 +129,6 @@ Most of Rio's delegate methods accept Handler model as well as they accept sourc
 | headers   | { [header: string]: string } | false               | CORS headers configuration |
 
 ---
-
 #### CORS Example 1
 In this example, requests from any origin are allowed by setting allowedOrigins to "*". 
 
@@ -148,7 +147,7 @@ In this example, requests from any origin are allowed by setting allowedOrigins 
 
 #### CORS Example 2
 
-This example demonstrates how to allow one or multiple specific origins to make requests. For instance, requests are allowed from either "https://riotestv2.c.retter.io" or "https://google.com".
+This example demonstrates how to allow one or multiple specific origins to make requests. For instance, requests are allowed from either "https://test1.com" or "https://test2.com".
 
 ```yaml
   - method: generateToken
@@ -156,8 +155,8 @@ This example demonstrates how to allow one or multiple specific origins to make 
     handler: index.generateToken
     cors:
         allowedOrigins:
-          - "https://riotestv2.c.retter.io"
-          - "https://google.com"
+          - "https://test1.com"
+          - "https://test2.com"
         headers:
           Access-Control-Expose-Headers: "*"
           Access-Control-Allow-Methods: "GET, POST"
