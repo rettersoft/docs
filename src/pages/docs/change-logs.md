@@ -1,7 +1,29 @@
 ---
 title: Change Logs
-description: A summary explanation about content of each version
+description: Summary of updates and improvements in each version  
 ---
+
+## v2.1.11  
+
+- Added core ASYNC support for CORS handling  
+- Improved method-listing page in the console  
+
+## v2.1.10  
+
+- Removed core S3 Object Tagging functionality  
+
+## v2.1.9  
+
+- Removed unsupported log operations in the console  
+- Fixed root-level logging for status codes  
+
+## v2.1.8  
+
+- Applied security updates to CORE, ROOT, RDK, CLI, and JS-SDK  
+
+## v2.1.7  
+
+- Added a feature that blocks custom tokens after they are used
 
 ## v2.1.6
 
