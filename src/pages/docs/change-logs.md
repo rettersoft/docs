@@ -5,7 +5,7 @@ description: Summary of updates and improvements in each version
 
 ## v2.1.12 
 
-- Added Sequelize query-support with Static IP
+- Added Sequelize query-support with Static IP to RDK
 - Added custom cidr support vpc
 
 ## v2.1.11  
