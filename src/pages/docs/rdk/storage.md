@@ -45,9 +45,9 @@ import RDK from '@retter/rdk'
 
 const rdk = new RDK()
 
-await rdk.setFile({ setName: 'my-set', sortKey: 'my-sort-key', data: { key: 'value' } })
-await rdk.getFile({ setName: 'my-set', sortKey: 'my-sort-key' })
-await rdk.deleteFile({ setName: 'my-set', beginsWith: 'my', limit: 10 })
+await rdk.setFile({ filename: 'my-file', body: 'my-content' })
+await rdk.getFile({ filename: 'my-file' })
+await rdk.deleteFile({ filename: 'my-file' })
 
 await rdk.pipeline()
     .setFile({ filename: 'my-file', body: 'my-content' })
@@ -69,9 +69,10 @@ await rdk.pipeline()
 
 ### Get File Input
 
-| Parameter     | Type                | Required            | Description         |
-| ------------- | ------------------- | ------------------- | ------------------- |
-| filename      | string              | true                | File's name |
+| Parameter       | Type                | Required            | Description         |
+| --------------- | ------------------- | ------------------- | ------------------- |
+| filename        | string              | true                | File's name |
+| returnSignedURL | boolean             | false               | Flag for retrieving signed url instead of file content |
 
 ### Delete File Input
 
