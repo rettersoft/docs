@@ -122,7 +122,7 @@ await rdk.pipeline()
 | partKey       | string              | true                | Partition key of the record |
 | sortKey       | string              | true                | Sort key of the record |
 | memory        | boolean             | false               | Flag to decide whether to put the data into memory or not |
-| expireAt      | number              | false               | Time to live in seconds |
+| expireAt      | number              | false               | Timestamp in seconds to expire at |
 | data          | Record<string, any> | true                | Actual data of the record |
 
 ### Increment Database Input
