@@ -53,6 +53,7 @@ const navigation = [
       { title: 'Storage', href: '/docs/rdk/storage' },
       { title: 'Memory', href: '/docs/rdk/memory' },
       { title: 'Static IP', href: '/docs/rdk/static-ip-calls' },
+      { title: 'MongoDB', href: '/docs/rdk/mongo-db' },
       { title: 'Deployment', href: '/docs/rdk/deployment' },
       { title: 'Cache', href: '/docs/rdk/caching' },
       { title: 'Clean Up', href: '/docs/rdk/delete' },
