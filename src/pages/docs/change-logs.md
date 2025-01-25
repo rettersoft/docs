@@ -3,6 +3,50 @@ title: Change Logs
 description: Summary of updates and improvements in each version  
 ---
 
+## v2.1.22
+
+- ROUTERLESS feature released. (Reduces cost by %30)
+- AUTH and TOKEN requests costs reduced by %40.
+
+## v2.1.21
+
+- MongoDB Support added to RDK
+  - `find`
+  - `findOne`
+  - `findOneAndDelete`
+  - `findOneAndUpdate`
+  - `updateOne`
+  - `updateMany`
+  - `deleteOne`
+  - `deleteMany`
+  - `insertOne`
+  - `insertMany`
+  - `aggregate`
+  - `countDocuments`
+  - `distinct`
+
+## v2.1.20
+
+- Added V2 CDK tagging
+- HTTP Log Adapters now support API headers
+- RIO Console supports SSO from Admin Panel
+- RIO Console users can be deleted from Admin Panel
+
+## v2.1.15
+
+- Improved CDK of dynamic RIO objects
+- Firehose logs streaming is now disabled.
+
+## v2.1.14
+
+- REST API Support
+- RDK ReadDatabase operation now supports filterExpired
+- RDK ReadDatabase redis wrong ttl bug fixes
+
+## v2.1.13
+
+- Improved CDK tagging
+
 ## v2.1.12 
 
 - Added full feature Sequelize support with Static IP to RDK
