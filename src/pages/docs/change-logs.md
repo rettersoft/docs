@@ -3,6 +3,11 @@ title: Change Logs
 description: Summary of updates and improvements in each version  
 ---
 
+## v2.1.23
+
+- Improve CORS Error Handling and Response Clarity
+- Configurable TTL for Access and Refresh Tokens in RDK.generateCustomToken  
+
 ## v2.1.22
 
 - ROUTERLESS feature released. (Reduces cost by %30)
