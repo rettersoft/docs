@@ -31,7 +31,6 @@ const navigation = [
       { title: 'Logs', href: '/docs/settings/logs' },
       { title: 'Destinations', href: '/docs/settings/destinations' },
       { title: 'Authentication Rules', href: '/docs/settings/authentication-rules' },
-      { title: 'Environments', href: '/docs/settings/environments' },
       { title: 'Quotas', href: '/docs/settings/quotas' },
     ],
   },
